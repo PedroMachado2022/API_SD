@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="main-text"> Olá, </h1>
+    <div onmouseover="displayMessage()" class='teste'>
+        <p>
+            Olá
+        </p>
+    </div>
+    <p> Hey wow! </p>
+    <script>
+        function displayMessage() {
+            alert("Hey");
+        }
+        window.onload = function () {
+
+            if (typeof (Storage) !== null) {
+                alert("O navegador permite!");
+                initialize();
+            } else {
+                alert("O navegador nao permite!");
+            }
+
+            function initialize() {
+                if (sessionStorage.getItem("nome") != null) {
+                    alert("Olá, " + sessionStorage.nome);
+                } else {
+                    alert("Olá, é seu primeiro acesso!");
+                    sessionStorage.nome = "Pedro";
+                }
+            }
+
+            var el = document.getElementById("main-text");
+            el.innerHTML = el.innerHTML + "Pedro";
+
+            el.style.color = "red"
+
+            var el2 = document.querySelector('p');
+
+            //el2.style.color = "blue"
+
+            var elementos = document.querySelectorAll('p');
+            elementos[0].style.background = "gold";
+            elementos[1].style.color = "blue";
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
