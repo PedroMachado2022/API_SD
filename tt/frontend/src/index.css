@@ -1,107 +1,35 @@
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/*  Foco em configuraçoes gerais */
 
 body {
   margin: 0;
-  overflow: hidden;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
+/* tamanho  tela */
 .container {
-  position: relative;
   display: flex;
   flex-direction: row;
   height: 100vh;
-  overflow: hidden
 }
 
 #menu {
   display: flex;
   flex-direction: column;
   width: 80%;
-  border: 1px solid red;
 }
 
 #menu-ladinho{
   display: flex;
   flex-direction: row;
-  border: 1px solid blue;
   width: 20%;
-}
-aside {
-  background-color: #1E1E1E;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
-
-aside .men_lateral {
-  width: 100%;
-  text-align: center;
-}
-
-#idzito {
-  width: 100%;
-  text-align: center;
-  padding-top: 15px;
-}
-
-header {
-  background-color: #040404;
-  box-shadow: 0px 10px 60px -30px rgba(255, 255, 255, 0.5);
-  z-index: 2;
-  height: 75px;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  display: flex;
 }
 
 main {
   background-color: #040404;
   position: relative;
-  z-index: 1;
   height: 100%;
 }
 
-header .user_menu {
-  background-color: #444;
-  color: #fff;
-  margin-right: 70px;
-  height: 100%;
-  width: 115px;
-}
-/* aaaaaaaaaaa */
-#form_button {
-  background-color: #4E5BF2;
-  border: 0px;
-  padding: 0px;
-  margin: 0px;
-  height: 25px;
-  color: white;
-}
+/*  */
 
-
-
-#form_box {
-  width: 180px;
-  height: 20px;
-  border: 1px solid red;
-}
-
-#search{
-  height: 100%;
-  border: 1px solid gold;
-  width: 280px;
-  margin-left: 3%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-}

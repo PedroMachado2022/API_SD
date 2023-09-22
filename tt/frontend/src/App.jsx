@@ -1,10 +1,10 @@
 import './App.css'
 
-import Container from '../components/Container'
+import Header from './components/Header'
 
-import Aside from '../components/Aside'
+import Aside from './components/Aside'
 
-import Main from '../components/Main'
+import Main from './components/Main'
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
           <Aside/>
         </div>
         <div id="menu">
-          <Container/>
+          <Header />
           <Main/>
         </div>
         

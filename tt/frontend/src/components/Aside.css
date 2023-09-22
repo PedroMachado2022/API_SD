@@ -1,0 +1,18 @@
+/*  Foco em barra lateral */
+aside {
+    background-color: #1E1E1E;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+aside .men_lateral {
+    width: 100%;
+    text-align: center;
+}
+
+#idzito {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
