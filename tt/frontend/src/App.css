@@ -24,7 +24,6 @@ aside {
   background-color: #1E1E1E;
   width: 15%;
   height: 100%;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
@@ -43,11 +42,6 @@ aside .men_lateral {
 
 header {
   background-color: #040404;
-  height: 8%;
-  width: 85%;
-  position: absolute;
-  top: 0;
-  right: 0;
   box-shadow: 0px 10px 60px -30px rgba(255, 255, 255, 0.5);
   z-index: 2;
 }
@@ -55,32 +49,22 @@ header {
 main {
   background-color: #040404;
   position: relative;
-  top: 8%;
-  left: 15%;
-  height: 92%;
-  width: 85%;
   z-index: 1;
 }
 
 header .user_menu {
   background-color: #444;
   color: #fff;
-  top: 0%;
-  bottom: 0%;
-  right: 5%;
-  width: 7%;
-  height: 100%;
-  position: absolute;
 }
 /* aaaaaaaaaaa */
-#eueu {
+#forms_button {
   background-color: #4E5BF2;
   border: none;
   padding: 3px;
   color: white;
 }
 
-#searchzito {
+#form_box {
   width: 50px;
   height: 100%;
   border: 1px solid red;

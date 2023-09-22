@@ -9,6 +9,15 @@ const Container = () => {
                 </div>
 
                 <div id="search"> 
+                  <form>
+                    <div id="haha">
+
+                    <input type = "text" id = "form_box"></input>
+                    <input type = "submit" id = "form_button"></input>
+  
+                    </div>
+                    
+                  </form>
                 </div>
                 
             </header>  

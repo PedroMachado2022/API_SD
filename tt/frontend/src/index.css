@@ -15,16 +15,28 @@ body {
 .container {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
   overflow: hidden
 }
 
+#menu {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border: 1px solid red;
+}
+
+#menu-ladinho{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid blue;
+  width: 20%;
+}
 aside {
   background-color: #1E1E1E;
-  width: 15%;
+  width: 100%;
   height: 100%;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
@@ -43,45 +55,53 @@ aside .men_lateral {
 
 header {
   background-color: #040404;
-  height: 8%;
-  width: 85%;
-  position: absolute;
-  top: 0;
-  right: 0;
   box-shadow: 0px 10px 60px -30px rgba(255, 255, 255, 0.5);
   z-index: 2;
+  height: 75px;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  display: flex;
 }
 
 main {
   background-color: #040404;
   position: relative;
-  top: 8%;
-  left: 15%;
-  height: 92%;
-  width: 85%;
   z-index: 1;
+  height: 100%;
 }
 
 header .user_menu {
   background-color: #444;
   color: #fff;
-  top: 0%;
-  bottom: 0%;
-  right: 5%;
-  width: 7%;
+  margin-right: 70px;
   height: 100%;
-  position: absolute;
+  width: 115px;
 }
 /* aaaaaaaaaaa */
-#eueu {
+#form_button {
   background-color: #4E5BF2;
-  border: none;
-  padding: 3px;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  height: 25px;
   color: white;
 }
 
-#searchzito {
-  width: 50px;
-  height: 100%;
+
+
+#form_box {
+  width: 180px;
+  height: 20px;
   border: 1px solid red;
+}
+
+#search{
+  height: 100%;
+  border: 1px solid gold;
+  width: 280px;
+  margin-left: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
