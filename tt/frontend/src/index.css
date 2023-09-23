@@ -10,19 +10,18 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
 }
 
 #menu {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 85%;
 }
 
 #menu-ladinho{
   display: flex;
   flex-direction: row;
-  width: 20%;
+  width: 15%;
 }
 
 main {
