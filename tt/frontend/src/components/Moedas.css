@@ -1,0 +1,50 @@
+#Moedas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    color: white;
+    
+}
+
+#form-moedas {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(46, 20, 161, 0.177);
+    display: flex;
+    flex-direction: column;
+}
+#form-moedas h3{
+    text-align: center;
+  font-weight: bold;
+}
+#form-moedas select{
+    display: block;
+    text-align: center;
+    background-color: #4E5BF2;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 6px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+#form-moedas button {
+    align-self: center;
+    width: 60px;
+    border: none;
+    padding: 6px 10px;
+    background-color: #4E5BF2;
+    color: #fff;
+}
+
+#form-moedas button:hover {
+    opacity: .8;
+    cursor: pointer; 
+}
+
+select:focus {
+    outline: 2px solid #0b0630;
+}

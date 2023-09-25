@@ -28,7 +28,7 @@ header .user_menu {
 
 
 #lupa {
-    background-image: url('../imgs/lupa.png');
+    background-image: url('../../public/lupa.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

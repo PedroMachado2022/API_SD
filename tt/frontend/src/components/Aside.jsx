@@ -9,7 +9,7 @@ const Aside = () => {
         <aside>
             <div id="logo">
               <a href="#">
-                <img src="\src\imgs\logo.png" alt="logo" />
+                <img src="\logo.png" alt="logo" />
               </a>
             </div>
             <div id="nav">
@@ -18,22 +18,22 @@ const Aside = () => {
                   <ul>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Doll.png"/>
+                      <img src="\Doll.png"/>
                       Dolar</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Real.png"/>
+                      <img src="\Real.png"/>
                       Real</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Euro.png"/>
+                      <img src="\euro.png"/>
                       Euro</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Yen.png"/>
+                      <img src="\Yen.png"/>
                       Yen</a>
                     </li>
                     
@@ -44,22 +44,22 @@ const Aside = () => {
                   <ul>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Doll.png"/>
+                      <img src="\Doll.png"/>
                       Dolar</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Real.png"/>
+                      <img src="\Real.png"/>
                       Real</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Euro.png"/>
+                      <img src="\euro.png"/>
                       Euro</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\src\imgs\Yen.png"/>
+                      <img src="\Yen.png"/>
                       Yen</a>
                     </li>
                     
