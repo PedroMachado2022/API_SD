@@ -33,7 +33,7 @@ const Aside = () => {
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\Yen.png"/>
+                      <div className='logo-img yen'></div> 
                       Yen</a>
                     </li>
                     

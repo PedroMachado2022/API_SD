@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <>
         <main>
-           <Moedas/>
+           <Moedas/> 
         </main>
     </>
   )
