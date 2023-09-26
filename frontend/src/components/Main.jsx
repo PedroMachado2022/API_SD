@@ -1,11 +1,11 @@
 import React from 'react'
-// import Moedas from './Moedas'
+import Moedas from './Moedas'
 
 const Main = () => {
   return (
     <>
         <main>
-           {/* <Moedas/> */}
+           <Moedas/> 
         </main>
     </>
   )
