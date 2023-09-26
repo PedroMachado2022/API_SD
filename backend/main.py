@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from scripts.request_BackendAPI import requestAPI
-import json
+
 app = Flask(__name__)
 @app.route("/")
 def hello_world():
