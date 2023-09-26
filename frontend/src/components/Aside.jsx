@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 import './Aside.css';
 
 
@@ -9,7 +10,7 @@ const Aside = () => {
         <aside>
             <div id="logo">
               <a href="#">
-                <img src="\logo.png" alt="logo" />
+                <img src='./static/logo.png'/>
               </a>
             </div>
             <div id="nav">
@@ -18,22 +19,22 @@ const Aside = () => {
                   <ul>
                     <li>
                       <a href='#'>
-                      <img src="\Doll.png"/>
+                      <img src='./static/Doll.png'/>
                       Dolar</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\Real.png"/>
+                      <img src='./static/Real.png'/>
                       Real</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\euro.png"/>
+                      <img src='./static/euro.png'/>
                       Euro</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\Yen.png"/>
+                      <img src='./static/Yen.png'/>
                       Yen</a>
                     </li>
                     
@@ -41,25 +42,25 @@ const Aside = () => {
               </div>
               <div className="navbar">
                 <h2>Moedas</h2>
-                  <ul>
+                <ul>
                     <li>
                       <a href='#'>
-                      <img src="\Doll.png"/>
+                      <img src='./static/Doll.png'/>
                       Dolar</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\Real.png"/>
+                      <img src='./static/Real.png'/>
                       Real</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\euro.png"/>
+                      <img src='./static/euro.png'/>
                       Euro</a>
                     </li>
                     <li>
                       <a href='#'>
-                      <img src="\Yen.png"/>
+                      <img src='./static/Yen.png'/>
                       Yen</a>
                     </li>
                     
