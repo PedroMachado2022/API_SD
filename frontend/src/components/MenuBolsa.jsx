@@ -3,7 +3,10 @@ import "./MenuBolsa.css"
 
 const MenuBolsa = () => {
     const bolsaBoxRef = useRef(null);
+    const ele = useRef(null) 
 
+
+    
     useEffect(() => {
       // Obtém uma referência para o elemento com a classe "bolsa_box"
       const bolsaBox = bolsaBoxRef.current;
@@ -20,6 +23,7 @@ const MenuBolsa = () => {
           bolsaBox.scrollLeft = novaPosicao;
         } else {
           // Quando chegar ao final, volte ao início
+          console.log(ele.current.offSetLeft, bolsaBox.scrollLeft)
           bolsaBox.scrollLeft = 0;
         }
       }
@@ -45,7 +49,7 @@ const MenuBolsa = () => {
 
   return (
     <div id="bolsa_box" ref={bolsaBoxRef}>
-        <div className='bolsa_item'>
+        <div className='bolsa_item' ref={ele}>
             <a href='#'>
                 <h4>Casas<span></span></h4>
                 <p>R$ 20,00</p>

@@ -15,6 +15,7 @@ def receber_post():
     response_data = queryGenerator_front(data)   
     return jsonify(response_data)  
 
+
 def queryGenerator_front(data):
     # Dados de entrada
     data_json = data
@@ -28,6 +29,7 @@ def queryGenerator_front(data):
     # Chama um outro scrip com a função "RequestAPI", que recebe a requisição do Frontend e faz a requisição para a API 
     a = requestAPI(main_coin, comparate_coins)
     print(a)
+    return a
    
     
 
