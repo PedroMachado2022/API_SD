@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 
 
-def requestAPI(main_coin: str, comparate_coins: list[str]):
+def requestAPI(main_coin, comparate_coins):
     ## Moeda principal da query
     mainCoin = main_coin
 
