@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from scripts.request_BackendAPI import requestAPI
+from request_BackendAPI import requestAPI
 
 app = Flask(__name__)
 @app.route("/")
@@ -31,8 +31,6 @@ def queryGenerator_front(data):
     print(a)
     return a
    
-    
-
 if __name__ == "__main__":
     app.run(debug=True)
 
