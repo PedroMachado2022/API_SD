@@ -1,45 +1,154 @@
 #Moedas {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 500px;
+    height: 450px;
     color: white;
     
 }
 
 #form-moedas {
+    min-width: 500px;
+    width: 40%;
+    height: 70%;
     padding: 30px;
     border-radius: 20px;
-    background-color: rgba(46, 20, 161, 0.177);
+    background-color: rgb(47, 50, 53);
+
+}
+
+#form_busca {
     display: flex;
-    flex-direction: column;
+    height: 50px;
 }
 
 #form-moedas h3{
+    padding-bottom: 30px;
+    width: 100%;
+    max-height: 50px;
+    margin: 0;
     text-align: center;
-   font-weight: bold;
+    font-weight: bold;
 }
 
-#form-moedas select{
-    display: block;
+#titulo {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#titulo_moeda {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+#titulo select{
+    width: 7px;
+    height: 15px;
+    font-size: 15px;
     text-align: center;
-    background-color: #4E5BF2;
+    background-color: #606060;
     color: #fff;
     border: none;
-    border-radius: 3px;
     padding: 6px;
     margin: 10px auto;
     cursor: pointer;
 }
+#form-moedas select option:checked {
+    background-color: #f0f0f0;
+    color: #333; 
+  }
 
+
+#label2 {
+   padding-right: 60px;
+    text-align: center; 
+    width: 100%;
+    max-height: 50px;
+}
+
+#label2 input {
+    color: #fff;
+    margin-top: 9px;
+    width: 200px;
+    height: 25px;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: #0b063000;
+}
+
+#label2 input:focus {
+    border-bottom: 3px solid black;
+    outline: none;
+}
+
+#label2 img {
+    position: relative;
+    top: 7px;
+    left: -30px;
+    height: 22px;
+    cursor: text;
+}
+.c {
+    border: 1px solid;
+    margin: 0 auto;
+    overflow-y: scroll;
+    max-height: 80px;
+    width: 270px;
+    background-color: #606060;
+    list-style-type: none;
+    border: 1px solid #fff; 
+}
+
+.c li {
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.c li:hover {
+    background-color: #3e3e3e;
+    
+}
+
+#ops {
+    width: 100%;
+    height: 120px;
+    margin-top: 50px;
+}
+#ops ul {
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 450px;
+}
+
+#ops li {
+    margin: 7px 15px 0px 0px;
+    background-color: #3b3b3b;
+    padding: 4px 7px;
+    border-radius: 2px;
+}
+#ops span {
+    color: rgba(244, 3, 3, 0.644);
+    cursor: pointer;
+    padding: 2px;
+    margin-left: 5px;
+}
+
+#btn-submit {
+    width: 100%;
+    text-align: center;
+}
 #form-moedas button {
-    align-self: center;
-    width: 60px;
+    margin-top: 30px;
+    width: 200px;
     border: none;
     padding: 6px 10px;
     background-color: #4E5BF2;
-    color: #fff;
+    color: #fff;    
 }
 
 #form-moedas button:hover {
@@ -50,3 +159,4 @@
 select:focus {
     outline: 2px solid #0b0630;
 }
+

@@ -5,6 +5,19 @@ import './Aside.css';
 
 
 const Aside = () => {
+  
+  const ha = (e) => {
+    const div_moedas = document.querySelector("#Moedas")
+    
+    const ti = document.querySelector("#titulo_moeda")
+    if (ti) {
+      ti.textContent = e.target.textContent;
+      div_moedas.style.display ="flex";
+    }
+  }
+
+  
+  
   return (
     <>
         <aside>
@@ -18,22 +31,22 @@ const Aside = () => {
                 <h2>Moedas</h2>
                   <ul>
                     <li>
-                      <a href='#'>
+                      <a href='#' onClick={ha}>
                       <img src='./static/Doll.png'/>
                       Dolar</a>
                     </li>
                     <li>
-                      <a href='#'>
+                      <a href='#' onClick={ha}>
                       <img src='./static/Real.png'/>
-                      Real</a>
+                     Real</a>
                     </li>
                     <li>
-                      <a href='#'>
+                      <a href='#' onClick={ha}>
                       <img src='./static/euro.png'/>
                       Euro</a>
                     </li>
                     <li>
-                      <a href='#'>
+                      <a href='#' onClick={ha}>
                       <img src='./static/Yen.png'/>
                       Yen</a>
                     </li>
