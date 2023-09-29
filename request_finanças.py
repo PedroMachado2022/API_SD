@@ -11,18 +11,23 @@ def request_finance():
         f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&apikey={l_key}",
         f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=META&apikey={l_key}",
         f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey={l_key}",
-        f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBAS3.SAO&apikey={l_key}"
+        f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBAS3.SAO&apikey={l_key}",  f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey={p_key}",
+        f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=FDMO34.SAO&apikey={p_key}",
+        f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=PETR4.SAO&apikey={p_key}",
+        f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=DIS&apikey={p_key}",
+        f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=VALE&apikey={p_key}"
     ]
 
     all_data = []
+ 
 
     for url in urls:
         response = requests.get(url)
-        #print(f"Requisição: {url} - Resposta: {response}")
+        print(f"Requisição: {url} - Resposta: {response}")
 
         if response.status_code == 200:
             data = response.json()
-            #print(f"Requisição: {url} - FOI!\n")
+            print(f"Requisição: {url} - FOI!\n")
             #print(data)
             
             
@@ -52,7 +57,9 @@ def request_finance():
 
     df = pd.DataFrame(all_data)
     json_data = df.to_json(orient='index')
-    #print(json_data)
-    return json_data
+    print(df)
+    #return json_data
 
 
+
+request_finance()
