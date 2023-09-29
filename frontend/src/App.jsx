@@ -7,7 +7,7 @@ import Aside from './components/Aside'
 import Main from './components/Main'
 
 function App() {
-
+  
   return (
       <div class='container'> 
        
@@ -15,7 +15,7 @@ function App() {
           <Aside/>
         </div>
         <div id="menu">
-          <Header />
+          <Header/>
           <Main/>
         </div>
         
