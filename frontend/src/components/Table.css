@@ -1,0 +1,55 @@
+#Table-moedas {
+    display: flex;
+    justify-content: center;
+    width: 99%;  
+    margin-top: 20px;
+}
+
+/* Table.css */
+table {
+    
+    display: block;
+    overflow-y: scroll;
+    color:  #fff;
+    border-collapse: collapse;
+    max-height: 370px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;   
+    user-select: none;
+    padding: 10px;
+    border-radius: 2px;
+    
+    /* box-shadow: 5px 5px 50px -30px #fff; */
+    
+}
+
+table::-webkit-scrollbar{
+    width: 0;
+}
+  
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+    
+}
+  
+table th {
+    color: #5649ba;
+    font-weight: bold;
+}
+  
+table tbody tr:nth-child(even) {
+    
+}
+
+table tbody tr {
+    cursor: pointer;
+}
+
+table tbody tr:hover {
+    background-color: #515050;
+}
+  /* andar tabela*/
+

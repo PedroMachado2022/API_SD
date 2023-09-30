@@ -17,7 +17,11 @@ function App() {
         <div id="menu">
           <Header/>
           <Main/>
+          <footer>
+
+        </footer>
         </div>
+        
         
         
       </div>

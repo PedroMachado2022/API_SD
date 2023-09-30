@@ -1,12 +1,3 @@
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 body {
   margin: 0;
   overflow: hidden;
@@ -46,11 +37,6 @@ header {
   z-index: 2;
 }
 
-main {
-  background-color: #040404;
-  position: relative;
-  z-index: 1;
-}
 
 header .user_menu {
   background-color: #444;

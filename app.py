@@ -22,6 +22,14 @@ def receber_post():
     return jsonify(response_data)  
 
 
+@app.route('/api/lista', methods=['POST', 'GET'])
+def enviar_lista():
+    response_data = [{'Moeda': 'Real', 'compra': 5.05, 'vender': 5.01, 'data':'09/30'}, {'Moeda': 'Real', 'compra': 5.05, 'vender': 5.01, 'data':'09/30'}]
+    print(request.json)
+    print(response_data)
+    return jsonify(response_data) 
+
+
 def queryGenerator_front(data):
     # Dados de entrada
     data_json = data
