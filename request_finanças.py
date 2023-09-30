@@ -50,7 +50,7 @@ def request_finance(vez):
                 
                 if last_refreshed_date in time_series:
                     values = time_series[last_refreshed_date]
-                    close_price = float(values.get("4. close", 0))
+                    close_price = float(values .get("4. close", 0))
                     high_price = float(values.get("2. high", 0))
                     low_price = float(values.get("3. low", 0))
 
@@ -65,7 +65,7 @@ def request_finance(vez):
     return all_data
 
 def save_to_json(data, filename):
-    with open(filename, 'w+') as file:
+    with open(filename, 'w') as file:
         json.dump(data, file)
 
 def load_from_json(filename):
