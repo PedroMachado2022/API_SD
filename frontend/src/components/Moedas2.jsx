@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-
+import { useContext, useState } from "react";
+import MoedaContext from "./MoedaContext";
 import './Moedas.css'
 
 
 const Moedas = () => {
-
+  //const {titu} = useContext(MoedaContext) 
+  
 //   input de busca
 
   //const gab = {"Real": "BRL", "Dolar": "USD", "BitCoin": "BTC", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dogcoin": "DOGE", "Ethereum": "ETH", "Rublo": "RUB", "Yuan": "CNY", "Iene": "JPY"}
