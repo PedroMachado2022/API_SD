@@ -38,8 +38,6 @@ def requestAPI(main_coin, comparate_coins):
     query_final_list: list[str] = query_final.split()
     #print(query_final_list)
 
-    #url2 = "https://economia.awesomeapi.com.br/json/daily/USD-BRL/15"
-
     if response.status_code == 200:
         # Pegando o json resposta da API
         data = response.json()

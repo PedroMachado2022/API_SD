@@ -7,18 +7,26 @@ const Container = () => {
     <>
 
       <header>
-        <div className="user_menu">
+
+        <div className="user_menu"></div>
+
+        <div className="api_imgs">
+
+          <a href="https://brapi.dev" target="_blank">
+            <img src="./static/brapi.png" alt="Brapi API" />
+          </a>
+
+          <a href="https://docs.awesomeapi.com.br" target="_blank">
+            <img src="./static/awesomeAPI.png" alt="awesomeAPI" />
+          </a>
+
         </div>
 
-        <div id="search">
-          <form>
-            <div id="lupa"></div>
-
-            <input type="text" id="form_box" placeholder='Search...'></input>
-            <input type="submit" id="form_button" value='Search'></input>
-
-          </form>
+        <div className="apis">
+          <td> API'S </td>
         </div>
+
+
 
       </header>
 

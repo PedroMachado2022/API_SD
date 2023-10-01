@@ -16,54 +16,21 @@ header .user_menu {
     width: 115px;
 }
 
-/* aaaaaaaaaaa */
-#form_button {
-    background-color: #4E5BF2;
-    border: 0px;
-    padding: 0px 8px;
-    margin: 0px;
-    height: 40px;
-    color: white;
+header .apis {
+    color: whitesmoke;
+    opacity: 0.9;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: min-content;
+    height: min-content;
+    margin-left: 30px;
+    margin-top: 10px;
+    border: 2px solid red;
 }
 
-
-#lupa {
-    background-image: url('../lupa.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 3px;
-    height: 25px;
-    margin-top: 7px;
-    margin-left: 3px;
-    position: absolute;
-    z-index: 5;
-    padding-right: 30px;
-}
-
-#form_box {
-    padding: 0;
-    margin: 0;
-    width: 180px;
-    height: 40px;
-    border: 0px solid;
-    background-color: #464F5B;
-    color: #fff;
-    padding-left: 40px;
-}
-
-#form_box::placeholder {
-    color: #d5d2d2;
-}
-
-
-#search {
-    height: 100%;
-
-    width: 280px;
-    margin-left: 3%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
+header .api_imgs {
+    margin-left: 30px;
+    margin-top: 50px;
+    border: 2px solid red;
 }
