@@ -8,25 +8,29 @@ def organize_requests(vez):
     l_key = "NSK8UHCQUQZ8OMMW"
     p_key = "KT76MWEQFJZSAT6Z"
 
+    l_key2 = "RQWG7IBE5YLW408I"
+    p_key2 = "CZTHQUNRKGPPTM8Z"
+
+
     if vez == 'first':
         frist_urls = [
                     
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ITUB3.SAO&apikey={l_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&apikey={l_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=META&apikey={l_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey={l_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBAS3.SAO&apikey={l_key}"
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ITUB3.SAO&apikey={l_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&apikey={l_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=META&apikey={l_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey={l_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBAS3.SAO&apikey={l_key2}"
                     
                     ]
         return frist_urls
     else:
         second_urls = [
                     
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey={p_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=FDMO34.SAO&apikey={p_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=PETR4.SAO&apikey={p_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=DIS&apikey={p_key}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=VALE&apikey={p_key}"
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey={p_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=FDMO34.SAO&apikey={p_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=PETR4.SAO&apikey={p_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=DIS&apikey={p_key2}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=VALE&apikey={p_key2}"
                     
                     ]
         return second_urls
@@ -60,7 +64,9 @@ def request_finance(vez):
                         "Fechamento": close_price,
                         "Maior Preço": high_price,
                         "Menor Preço": low_price
-                    })
+                    })        
+        else:
+            print(f"Erro na requisição para {url}, status code: {response.status_code}")
 
     return all_data
 
@@ -85,6 +91,7 @@ def return_request():
     time.sleep(60)
     
     data_second = request_finance('second')
+    print(data_second)
 
     all_data += data_first + data_second
 

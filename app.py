@@ -9,18 +9,22 @@ def hello_world():
 
 @app.route('/api/rota', methods=['POST', 'GET'])
 def receber_post():
+    # Recebendo dados do FrontEnd
     data = request.json
 
+    # Chama a função que cria a query para o request
     queryGenerator_front(data)
+
+    # Retorna os dados para o front end (Json com os dados que iremos utilizar para mostrar)
     response_data = queryGenerator_front(data)   
     return jsonify(response_data)  
 
-
+"""
 @app.route('/api/lista', methods=['POST', 'GET'])
 def enviar_lista():
     
     data = request.json
-    arq_financas()
+    #arq_financas()
 
     gab = {"Real": "BRL", "Dolar": "USD", "Dólar Australiano": "AUD", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dólar Neozelandês": "NZD",
             "Rand Sul-Africano": "ZAR", "Rublo": "RUB", "Yuan": "CNY", "Iene": "JPY"}
@@ -38,26 +42,29 @@ def enviar_lista():
     queryGenerator_front(main_coin, comparate_list)
     response_data = queryGenerator_front(main_coin, comparate_list)   
     return jsonify(response_data)  
-
-@app.route('/api/lista-bolsa', methods=['POST', 'GET'])
-def envia_financas():
-    pass
+"""
 
 
-def arq_financas():
-    return_request()
+#@app.route('/api/lista-bolsa', methods=['POST', 'GET'])
+#def envia_financas():
+    #pass
 
+#def arq_financas():
+    #return_request()
 
-def queryGenerator_front(coin, comparate_coins):
+def queryGenerator_front(data):
     # Dados de entrada
-    
-    # Moeda a ser comparada com as demais
-    main_coin = coin
+    data_json = data
 
-    # Chama um outro script com a função "RequestAPI", que recebe a requisição do Frontend e faz a requisição para a API 
+    # Moeda a ser comparada com as demais
+    main_coin = data_json['moeda1']
+
+    # Lista de moedas a ser comparada 
+    comparate_coins = [val for chave, val in data_json.items()][1:]
+    
+    # Chama um outro scrip com a função "RequestAPI", que recebe a requisição do Frontend e faz a requisição para a API 
     a = requestAPI(main_coin, comparate_coins)
     print(a)
-    return a
    
 if __name__ == "__main__":
     app.run(debug=True)
