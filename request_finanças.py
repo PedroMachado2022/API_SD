@@ -136,4 +136,4 @@ def return_request():
     print("Dados combinados de ambos os conjuntos:")
     print(all_data)
 
-return_request()
+#return_request()

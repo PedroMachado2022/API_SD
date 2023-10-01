@@ -46,10 +46,11 @@ def enviar_lista():
 
 @app.route('/api/lista-bolsa', methods=['POST', 'GET'])
 def envia_financas():
-   with open('finance_data.json', 'r') as file:
+    with open('finance_data.json', 'r') as file:
         data = json.load(file)
 
-    #return jsonify(data)
+    return jsonify(data)
+
 
 def arq_financas():
      return_request()
@@ -76,12 +77,12 @@ def queryGenerator_front(coin, comparate_coins):
 
     # Chama um outro script com a função "RequestAPI", que recebe a requisição do Frontend e faz a requisição para a API 
     a = requestAPI(main_coin, comparate_coins)
-    print(f"Ta pritando aqui essa porra {a}")
+   
     return a
    
 if __name__ == "__main__":
-     arq_financas_thread = Thread(target=schedule_arq_financas)
-     arq_financas_thread.start()
+     #arq_financas_thread = Thread(target=schedule_arq_financas)
+     #arq_financas_thread.start()
 
      app.run(debug=True)
 
