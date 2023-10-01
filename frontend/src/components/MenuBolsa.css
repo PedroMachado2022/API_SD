@@ -9,31 +9,29 @@
     overflow-y: hidden;
 }
 
+
+/* itens */
+
 .bolsa_item {
-    background-color: rgb(63, 62, 65);
+    background-color: rgba(63, 62, 65, 0.438);
+    box-shadow: 0px 2px 3px 1px rgb(249, 249, 249, 0.7);
     border-radius: 5px;
     padding: 0;
     display: flex;
-    text-align: center;
+    flex-wrap: wrap;
     margin: 5px 25px;
     border-radius: 5px;
-    min-height: 90px;
-    min-width: 150px;
-    font-weight: 800;
-}
-
-
-.bolsa_item a {
-    color: #e2e2e2fa;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    min-height: 93px;
+    min-width: 160px;
+    width: 160px;
+    font-weight: 400;
     cursor: pointer;
+    color: #fff;
 }
 
-.bolsa_item a h4 {
+
+.bolsa_item h4 {
+    padding: 0;
     justify-content: space-between;
     margin: 0;
     display: flex;
@@ -42,26 +40,36 @@
     margin: 4px 2px;
     margin-left: 7px;
 }
-.bolsa_item a span {
-    background-image: url(../Doll.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.bolsa_item img {
+    padding-left: 75px;
+    align-self: end;
     width: 20px;
     height: 20px;
 }
-.bolsa_item a p {
-    padding-top: 25px;
-    margin-left: 5px;
-    text-align: left;
+.bolsa_item .closed {
     
-}
-.bolsa_item a span {
-    display: block;
-    align-self: left;
-    font-size: 15px;
-}
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 5px 0px 0px 5px;
 
+    text-align: left;
+    font-size: 13px;
+}
+.bolsa_item  .footer-box{
+    margin-left: 5px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+.baixa {
+    color: rgba(204, 20, 20, 0.777);
+}
+.alta {
+    color: rgba(18, 178, 18, 0.696);
+}
 /* Estilize a barra de rolagem no Chrome e no Edge */
 #bolsa_box::-webkit-scrollbar {
     height: 0px;

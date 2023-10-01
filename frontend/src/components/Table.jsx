@@ -3,7 +3,8 @@ import "./Table.css"
 
 
 const Table = () => {
-    const [lista_moedas, setLista] = useState([])
+    const [lista_moedas, setLista] = useState({})
+    
 
     useEffect(() => {
         fetch('http://127.0.0.1:5000/api/lista', {
@@ -20,8 +21,7 @@ const Table = () => {
             return response.json();
           })
           .then((data) => {
-            console.log(data)
-            setLista(data);
+            setLista(JSON.parse(data));
           })
           .catch((error) => {
             console.error('Erro durante o envio de dados:', error);
@@ -34,7 +34,7 @@ const Table = () => {
   return (
     <div id='Table-moedas'
     >
-        <button onClick={()=>{console.log(lista_moedas)}}>aqui</button>
+        
         <table>
             <thead>
                 <tr>
@@ -46,21 +46,15 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-            {/* {opcao_sele.length>0 && (
-                    <ul className="moedas_sele">
-                        {opcao_sele.map((op) => (
-                            <li key={op} >{op}<span className={op} onClick={handleVoltaLista}>X</span></li>
-                        ))}
-                    </ul>
-                )} */}
-                {lista_moedas.length > 0 && (
-                    lista_moedas.map((i) => (
-                            <tr>
-                                <td>{i.Moeda}</td>
-                                <td>{i.compra}</td>
-                                <td>{i.vender}</td>
-                                <td>10%</td>
-                                <td>{i.data}</td>
+          
+                {Object.keys(lista_moedas).length > 2 && (
+                    Object.values(lista_moedas).map((item) => (
+                            <tr key={item.code}>
+                                <td>{item.name}</td>
+                                <td>{item.bid}</td>
+                                <td>{item.ask}</td>
+                                <td className={item.pctChange < 0 ?  'red' : 'green'}>{item.pctChange}</td>
+                                <td>{item.create_date}</td>
                             </tr>
                     )) 
                 )}
