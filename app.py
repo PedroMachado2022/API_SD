@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from request_BackendAPI import requestAPI
 from request_finanças import return_request
-
+import json
 
 app = Flask(__name__)
 
@@ -44,8 +44,10 @@ def enviar_lista():
 
 @app.route('/api/lista-bolsa', methods=['POST', 'GET'])
 def envia_financas():
-    pass
+    with open('finance_data.json', 'r') as file:
+        data = json.load(file)
 
+    return jsonify(data)
 
 def arq_financas():
      return_request()
