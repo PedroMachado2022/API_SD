@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, jsonify
 from request_BackendAPI import requestAPI
 from request_finanças import return_request
 import json
-import schedule
 import time
+import schedule
 from threading import Thread
 
 app = Flask(__name__)
@@ -51,23 +51,16 @@ def envia_financas():
 
     return jsonify(data)
 
-
 def arq_financas():
      return_request()
 
-def schedule_arq_financas():
-    while True:
-        arq_financas()
-       
-        # Agende a próxima execução para 20 segundos depois
-        schedule.every(3).minutes.do(arq_financas)
-        print("foi hehe")
-        
+schedule.every(24).hours.do(arq_financas)
 
-        # Agende a próxima execução para 24 horas depois
-        #schedule.every(24).hours.do(arq_financas)
-        # Aguarde 24 horas antes de agendar a próxima execução
-        #time.sleep(24 * 60 * 60)
+def arq_financas_periodicamente():
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
 
 def queryGenerator_front(coin, comparate_coins):
     # Dados de entrada
@@ -81,8 +74,11 @@ def queryGenerator_front(coin, comparate_coins):
     return a
    
 if __name__ == "__main__":
-     #arq_financas_thread = Thread(target=schedule_arq_financas)
-     #arq_financas_thread.start()
+     
 
-     app.run(debug=True)
+    arq_financas_thread = Thread(target=arq_financas_periodicamente)
+    arq_financas_thread.daemon = True  # Isso fará com que a thread seja encerrada quando o programa principal sair
+    arq_financas_thread.start()
+
+    app.run(debug=True)
 
