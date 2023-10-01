@@ -13,15 +13,18 @@ def organize_requests(vez):
     l_key2 = "RQWG7IBE5YLW408I"
     p_key2 = "CZTHQUNRKGPPTM8Z"
 
+    l_key3 = "K01WU25XOTPIUE7P"
+    p_key3 = "9S80DRE3HSJLDETA"
+
     # Primeiras 5 URL'S
     if vez == 'first':
         frist_urls = [
                     
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ITUB3.SAO&apikey={l_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&apikey={l_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=META&apikey={l_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey={l_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBAS3.SAO&apikey={l_key2}"
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ITUB3.SAO&apikey={l_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&apikey={l_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=META&apikey={l_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey={l_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BBAS3.SAO&apikey={l_key3}"
                     
                     ]
         return frist_urls
@@ -29,11 +32,11 @@ def organize_requests(vez):
     else:
         second_urls = [
                     
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey={p_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=FDMO34.SAO&apikey={p_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=PETR4.SAO&apikey={p_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=DIS&apikey={p_key2}",
-                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=VALE&apikey={p_key2}"
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey={p_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=FDMO34.SAO&apikey={p_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=PETR4.SAO&apikey={p_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=DIS&apikey={p_key3}",
+                    f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=VALE&apikey={p_key3}"
                     
                     ]
         return second_urls
@@ -51,14 +54,15 @@ def request_finance(vez):
         # Requisita para a API com o URL desejado
         response = requests.get(url)
         
-        #print(f"Requisição: {url} - Resposta: {response}")
+        print(f"Requisição: {url} - Resposta: {response}")
 
         # Verificamos se a API respondeu corretamente com os dados
         if response.status_code == 200:
             # Pegamos o json enviado pela API
             data = response.json()
+            print(f"Esta vazio seu burro do caralho {data}")
 
-            #print(f"Requisição: {url} - FOI!\n")
+            print(f"Requisição: {url} - FOI!\n")
 
             # Verificamos se temos dados dentro do Json
             if "Time Series (Daily)" in data:
@@ -112,6 +116,7 @@ def return_request():
     
     # Chama a função dos requests com o valor "frist"
     data_first = request_finance('first')
+    print(data_first)
     
     # Da um tempo de 1 minuto antes de realizar o outro request (Necessário para conseguir as 10 ações que queremos utilizar)
     time.sleep(60)
@@ -125,7 +130,7 @@ def return_request():
     # Cria o arquivo JSON com os dados das duas requisições
     save_to_json(all_data, 'finance_data.json')
 
-    #print("Dados combinados de ambos os conjuntos:")
-    #print(all_data)
+    print("Dados combinados de ambos os conjuntos:")
+    print(all_data)
 
-#return_request()
+return_request()

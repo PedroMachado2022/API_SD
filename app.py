@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, jsonify
 from request_BackendAPI import requestAPI
 from request_finanças import return_request
 import json
+import schedule
+import time
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -44,14 +47,27 @@ def enviar_lista():
 
 @app.route('/api/lista-bolsa', methods=['POST', 'GET'])
 def envia_financas():
-    with open('finance_data.json', 'r') as file:
+   with open('finance_data.json', 'r') as file:
         data = json.load(file)
 
-    return jsonify(data)
+    #return jsonify(data)
 
 def arq_financas():
      return_request()
 
+def schedule_arq_financas():
+    while True:
+        arq_financas()
+       
+        # Agende a próxima execução para 20 segundos depois
+        schedule.every(3).minutes.do(arq_financas)
+        print("foi hehe")
+        
+
+        # Agende a próxima execução para 24 horas depois
+        #schedule.every(24).hours.do(arq_financas)
+        # Aguarde 24 horas antes de agendar a próxima execução
+        #time.sleep(24 * 60 * 60)
 
 def queryGenerator_front(coin, comparate_coins):
     # Dados de entrada
@@ -61,9 +77,12 @@ def queryGenerator_front(coin, comparate_coins):
 
     # Chama um outro script com a função "RequestAPI", que recebe a requisição do Frontend e faz a requisição para a API 
     a = requestAPI(main_coin, comparate_coins)
-    print(a)
+    print(f"Ta pritando aqui essa porra {a}")
     return a
    
 if __name__ == "__main__":
-    app.run(debug=True)
+     arq_financas_thread = Thread(target=schedule_arq_financas)
+     arq_financas_thread.start()
+
+     app.run(debug=True)
 
