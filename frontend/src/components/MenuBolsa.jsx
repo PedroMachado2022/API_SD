@@ -1,11 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./MenuBolsa.css"
 
 const MenuBolsa = () => {
     const bolsaBoxRef = useRef(null);
     const ele = useRef(null) 
 
+    const [dbolsa, setDbolsa] = useState()
 
+
+    useEffect(()=>{
+        fetch('http://127.0.0.1:5000/api/lista-bolsa')
+        .then((response)=> {
+            if(!response.ok) {
+                throw new Error("Erro ao enviar")
+            }
+            return response.json();
+        })
+        .then((data)=> {
+            setDbolsa(data)
+        })
+        .catch((error) => {
+            console.error("Erro durante o envio de dados", error)
+        })
+    })
     
     useEffect(() => {
       // Obtém uma referência para o elemento com a classe "bolsa_box"

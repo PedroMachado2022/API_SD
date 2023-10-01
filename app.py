@@ -2,7 +2,9 @@ from flask import Flask, render_template, request, jsonify
 from request_BackendAPI import requestAPI
 from request_finanças import return_request
 
+
 app = Flask(__name__)
+
 @app.route("/")
 def hello_world():
     return render_template("index.html")
@@ -16,11 +18,11 @@ def receber_post():
     return jsonify(response_data)  
 
 
-@app.route('/api/lista', methods=['POST', 'GET'])
+@app.route('/api/lista', methods=['POST'])
 def enviar_lista():
     
     data = request.json
-    arq_financas()
+    #arq_financas()
 
     gab = {"Real": "BRL", "Dolar": "USD", "Dólar Australiano": "AUD", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dólar Neozelandês": "NZD",
             "Rand Sul-Africano": "ZAR", "Rublo": "RUB", "Yuan": "CNY", "Iene": "JPY"}
@@ -39,13 +41,14 @@ def enviar_lista():
     response_data = queryGenerator_front(main_coin, comparate_list)   
     return jsonify(response_data)  
 
+
 @app.route('/api/lista-bolsa', methods=['POST', 'GET'])
 def envia_financas():
     pass
 
 
 def arq_financas():
-    return_request()
+     return_request()
 
 
 def queryGenerator_front(coin, comparate_coins):

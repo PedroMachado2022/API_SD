@@ -53,3 +53,10 @@ table tbody tr:hover {
 }
   /* andar tabela*/
 
+.red {
+    color: red;
+}
+
+.green {
+    color: rgb(4, 187, 4);
+}
