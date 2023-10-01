@@ -12,6 +12,9 @@ def organize_requests(vez):
 
     l_key2 = "RQWG7IBE5YLW408I"
     p_key2 = "CZTHQUNRKGPPTM8Z"
+    
+    l_key3 = "K01WU25XOTPIUE7P"
+    p_key3 = "9S80DRE3HSJLDETA"
 
     l_key3 = "K01WU25XOTPIUE7P"
     p_key3 = "9S80DRE3HSJLDETA"

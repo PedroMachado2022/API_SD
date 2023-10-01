@@ -25,12 +25,11 @@ header .apis {
     width: min-content;
     height: min-content;
     margin-left: 30px;
-    margin-top: 10px;
-    border: 2px solid red;
+    margin-top: 5px;
 }
 
 header .api_imgs {
+    height: 100%;
     margin-left: 30px;
-    margin-top: 50px;
     border: 2px solid red;
 }

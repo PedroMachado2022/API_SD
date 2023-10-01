@@ -27,8 +27,7 @@ def enviar_lista():
     data = request.json
     #arq_financas()
 
-    gab = {"Real": "BRL", "Dolar": "USD", "Dólar Australiano": "AUD", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dólar Neozelandês": "NZD",
-            "Rand Sul-Africano": "ZAR", "Rublo": "RUB", "Yuan": "CNY", "Iene": "JPY"}
+    gab = {"Real": "BRL", "Dolar": "USD", "Dólar Australiano": "AUD", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dólar Neozelandês": "NZD","Rand Sul-Africano": "ZAR", "Rublo": "RUB", "Yuan": "CNY", "Iene": "JPY"}
     
   
     main_coin = data = gab[data]

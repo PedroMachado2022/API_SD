@@ -9,9 +9,8 @@ const Container = () => {
       <header>
 
         <div className="user_menu"></div>
-
-        <div className="api_imgs">
-
+        <div className="apis">
+       
           <a href="https://brapi.dev" target="_blank">
             <img src="./static/brapi.png" alt="Brapi API" />
           </a>
@@ -21,8 +20,9 @@ const Container = () => {
           </a>
 
         </div>
+ <div className="api_imgs">
 
-        <div className="apis">
+        
           <td> API'S </td>
         </div>
 

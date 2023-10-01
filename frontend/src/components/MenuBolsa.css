@@ -18,7 +18,7 @@
     border-radius: 5px;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin: 5px 25px;
     border-radius: 5px;
     min-height: 93px;
@@ -29,23 +29,25 @@
     color: #fff;
 }
 
-
-.bolsa_item h4 {
-    padding: 0;
+.titulo_box {
+    display: flex;
+    width: 100%;
     justify-content: space-between;
+}
+
+.titulo_box img{
+    width: 20px;
+    padding: 5px 5px;
+    margin: 0;
+}
+
+.titulo_box p {
+    padding-top: 5px;
+    padding-left: 5px;
     margin: 0;
     display: flex;
-    flex-direction: row;
-    font-size: 15px;
-    margin: 4px 2px;
-    margin-left: 7px;
 }
-.bolsa_item img {
-    padding-left: 75px;
-    align-self: end;
-    width: 20px;
-    height: 20px;
-}
+
 .bolsa_item .closed {
     
     width: 100%;
