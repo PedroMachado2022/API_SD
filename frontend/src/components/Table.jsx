@@ -7,7 +7,7 @@ const Table = () => {
 
 
   useEffect(() => {
-    fetch('apisd-production.up.railway.app/api/lista', {
+    fetch('https://apisd-production.up.railway.app/api/lista', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
