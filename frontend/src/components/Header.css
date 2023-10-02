@@ -35,11 +35,8 @@ header .api_txt {
 
 header .api_imgs {
     height: 80%;
-    /* Reduza a altura conforme necessário */
     width: auto;
-    /* Use 'auto' para manter a largura proporcional */
     margin-top: 8px;
-    /* Aumente ou diminua a margem conforme necessário */
     margin-left: 20px;
 
 }

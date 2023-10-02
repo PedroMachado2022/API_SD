@@ -13,14 +13,13 @@
 /* itens */
 
 .bolsa_item {
-    background-color: rgba(63, 62, 65, 0.438);
-    box-shadow: 0px 2px 3px 1px rgb(249, 249, 249, 0.7);
-    border-radius: 5px;
+    background-color: rgba(27, 28, 46, 0.7);
+    box-shadow: 0px 2px 3px 1px rgba(56, 56, 56, 0.7);
+    border-radius: 1px;
     padding: 0;
     display: flex;
     flex-direction: column;
     margin: 5px 25px;
-    border-radius: 5px;
     min-height: 93px;
     min-width: 160px;
     width: 160px;
@@ -31,11 +30,13 @@
 
 .titulo_box {
     display: flex;
+    height: 30px;
     width: 100%;
     justify-content: space-between;
+    border: 1px solid red;
 }
 
-.titulo_box img{
+.titulo_box img {
     width: 20px;
     padding: 5px 5px;
     margin: 0;
@@ -49,43 +50,56 @@
 }
 
 .bolsa_item .closed {
-    
+
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding: 0px;
-    margin: 5px 0px 0px 5px;
-
+    padding-top: 30px;
+    margin: 5px 0px 0px 3px;
+    font-family: 'Times New Roman', Times, serif;
     text-align: left;
-    font-size: 13px;
+    font-size: 16px;
 }
-.bolsa_item  .footer-box{
+
+.bolsa_item .footer-box {
+    font-size: 12px;
     margin-left: 5px;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
+    width: 35%;
     padding: 0;
+    text-align: center;
 }
+
+.bolsa_item .box_org {
+
+    display: flex;
+}
+
 .baixa {
     color: rgba(204, 20, 20, 0.777);
 }
+
 .alta {
     color: rgba(18, 178, 18, 0.696);
 }
+
 /* Estilize a barra de rolagem no Chrome e no Edge */
 #bolsa_box::-webkit-scrollbar {
     height: 0px;
-    width: 2px; /* Define a largura da barra de rolagem */
+    width: 2px;
+    /* Define a largura da barra de rolagem */
 }
 
 #bolsa_box::-webkit-scrollbar-thumb {
-    background-color: #888; /* Define a cor do polegar da barra de rolagem */
+    background-color: #888;
+    /* Define a cor do polegar da barra de rolagem */
 }
 
 #bolsa_box::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Define a cor do polegar da barra de rolagem quando hover */
+    background-color: #555;
+    /* Define a cor do polegar da barra de rolagem quando hover */
 }
 
 #bolsa_box::-webkit-scrollbar-track {
-    background-color: #f1f1f11b; /* Define a cor da pista da barra de rolagem */
+    background-color: #f1f1f11b;
+    /* Define a cor da pista da barra de rolagem */
 }

@@ -50,6 +50,7 @@ def enviar_lista():
 def envia_financas():
     with open('finance_data.json', 'r') as file:
         data = json.load(file)
+        print(data)
 
     return jsonify(data)
 
