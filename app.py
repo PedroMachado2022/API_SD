@@ -12,7 +12,7 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
-"""
+
 @app.route('/api/rota', methods=['POST', 'GET'])
 def receber_post():
     data = request.json
@@ -20,7 +20,7 @@ def receber_post():
     queryGenerator_front(data)
     response_data = queryGenerator_front(data)   
     return jsonify(response_data)  
-"""
+
 
 
 @app.route('/api/lista', methods=['POST'])
