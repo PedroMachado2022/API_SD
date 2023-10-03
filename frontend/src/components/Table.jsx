@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import "./Table.css"
-
+import { DadosContext } from './DadosContext'
 
 const Table = () => {
   const [lista_moedas, setLista] = useState({})
+  const {Dados} = useContext(DadosContext)
+  
+  console.log(Dados)
+ 
 
-
+  // url https://apisd-production.up.railway.app/api/lista
   useEffect(() => {
-    fetch('https://apisd-production.up.railway.app/api/lista', {
+    
+    fetch('http://127.0.0.1:5000//api/lista', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify('Real'),
+      body: JSON.stringify(Dados),
     })
       .then((response) => {
         if (!response.ok) {
@@ -21,13 +26,15 @@ const Table = () => {
         return response.json();
       })
       .then((data) => {
+        console.log(data)
         setLista(JSON.parse(data));
+        console.log(lista_moedas)
       })
       .catch((error) => {
         console.error('Erro durante o envio de dados:', error);
 
       });
-  }, []);
+  }, [Dados]);
 
 
 
@@ -63,7 +70,7 @@ const Table = () => {
         </tbody>
 
       </table>
-
+      
     </div>
   )
 }

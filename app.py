@@ -29,9 +29,9 @@ def enviar_lista():
     data = request.json
     #arq_financas()
 
-    gab = {"Real": "BRL", "Dolar": "USD", "Dólar Australiano": "AUD", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dólar Neozelandês": "NZD","Rand Sul-Africano": "ZAR", "Rublo": "RUB", "Yuan": "CNY", "Iene": "JPY"}
+    gab = {"Real": "BRL", "Dolar": "USD", "Dólar Australiano": "AUD", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dólar Neozelandês": "NZD","Rand Sul-Africano": "ZAR", "Rublo": "RUB", "Yuan": "CNY", "Yen": "JPY"}
     
-  
+    print(data)
     main_coin = data = gab[data]
     
 
@@ -40,10 +40,9 @@ def enviar_lista():
     for coin, cod in gab.items():
         if cod != main_coin:
             comparate_list.append(cod)
+    print("aqui")
     
-    queryGenerator_front(main_coin, comparate_list)
-    response_data = queryGenerator_front(main_coin, comparate_list)   
-    return jsonify(response_data)  
+    return jsonify(queryGenerator_front(main_coin, comparate_list))  
 
 
 @app.route('/api/lista-bolsa', methods=['POST', 'GET'])
@@ -57,7 +56,7 @@ def envia_financas():
 def arq_financas():
      return_request()
 
-schedule.every(24).hours.do(arq_financas)
+#schedule.every(24).hours.do(arq_financas)
 
 def arq_financas_periodicamente():
     while True:
@@ -79,9 +78,9 @@ def queryGenerator_front(coin, comparate_coins):
 if __name__ == "__main__":
      
 
-    arq_financas_thread = Thread(target=arq_financas_periodicamente)
-    arq_financas_thread.daemon = True  
-    arq_financas_thread.start()
+    #arq_financas_thread = Thread(target=arq_financas_periodicamente)
+    #arq_financas_thread.daemon = True  
+    #arq_financas_thread.start()
 
     app.run(debug=True)
 
