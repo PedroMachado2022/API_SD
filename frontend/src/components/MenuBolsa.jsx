@@ -80,7 +80,7 @@ const MenuBolsa = () => {
                     </div>
                 )
                 ))}
-
+        
         </div>
     )
 }
