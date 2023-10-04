@@ -12,45 +12,18 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
-
-@app.route('/api/rota', methods=['POST', 'GET'])
-def receber_post():
-    data = request.json
-
-    queryGenerator_front(data)
-    response_data = queryGenerator_front(data)   
-    return jsonify(response_data)  
-
-
-
-@app.route('/api/lista', methods=['POST'])
+@app.route('/api/lista', methods=['POST', "GET"])
 def enviar_lista():
+    with open('Cotas_data.json', 'r') as file:
+        data = json.load(file)
     
-    data = request.json
-    #arq_financas()
-
-    gab = {"Real": "BRL", "Dolar": "USD", "Dólar Australiano": "AUD", "Peso(ARG)": "ARS", "Dolar(CAN)": "CAD", "Euro": "EUR", "Libra(BGB)": "GBP", "Dólar Neozelandês": "NZD","Rand Sul-Africano": "ZAR", "Rublo": "RUB", "Yuan": "CNY", "Yen": "JPY"}
-    
-    print(data)
-    main_coin = data = gab[data]
-    
-
-    comparate_list = [] 
-
-    for coin, cod in gab.items():
-        if cod != main_coin:
-            comparate_list.append(cod)
-    print("aqui")
-    
-    return jsonify(queryGenerator_front(main_coin, comparate_list))  
+    return jsonify(data)  
 
 
 @app.route('/api/lista-bolsa', methods=['POST', 'GET'])
 def envia_financas():
     with open('finance_data.json', 'r') as file:
         data = json.load(file)
-        print(data)
-
     return jsonify(data)
 
 def arq_financas():
@@ -64,16 +37,6 @@ def arq_financas_periodicamente():
         time.sleep(1)
 
 
-def queryGenerator_front(coin, comparate_coins):
-    # Dados de entrada
-    
-    # Moeda a ser comparada com as demais
-    main_coin = coin
-
-    # Chama um outro script com a função "RequestAPI", que recebe a requisição do Frontend e faz a requisição para a API 
-    a = requestAPI(main_coin, comparate_coins)
-   
-    return a
    
 if __name__ == "__main__":
      

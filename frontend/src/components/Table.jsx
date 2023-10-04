@@ -12,13 +12,7 @@ const Table = () => {
   // url https://apisd-production.up.railway.app/api/lista
   useEffect(() => {
     
-    fetch('http://127.0.0.1:5000//api/lista', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(Dados),
-    })
+    fetch('http://127.0.0.1:5000/api/lista')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Erro ao enviar dados');
@@ -26,15 +20,15 @@ const Table = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data)
+        
         setLista(JSON.parse(data));
-        console.log(lista_moedas)
+        
       })
       .catch((error) => {
         console.error('Erro durante o envio de dados:', error);
 
       });
-  }, [Dados]);
+  }, []);
 
 
 
