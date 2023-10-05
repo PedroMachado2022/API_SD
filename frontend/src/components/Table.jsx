@@ -7,8 +7,10 @@ const Table = () => {
   const [lista_moedas, setLista] = useState(a)
   const [code, setCode] = useState('')
  
-  
+  const [valorTroca, setValorTroca] = useState([])
+  const [inputV, SetInputV] = useState('')
 
+  const [resultado, setResultado] = useState("")
   // const {Dados} = useContext(DadosContext)
   
   // useEffect(()=>{
@@ -41,8 +43,28 @@ const Table = () => {
       });
   }, []);
 
+  // functions
 
+  const handleTable = (e) => {
+    // Acesse o elemento da linha que foi clicado
+  const row = e.currentTarget;
+  
+  // Use métodos DOM para acessar os valores das células da linha
+  const cells = row.getElementsByTagName('td');
 
+  // Agora você pode acessar os valores das células individualmente
+  const name = cells[0].innerText;
+  const bid = cells[1].innerText;
+  const ask = cells[2].innerText;
+  
+  // Faça o que quiser com esses valores
+  setValorTroca([name, bid, ask])
+};
+const handleResult = (e) => {
+  //e.preventDefault()
+  setResultado(inputV*valorTroca[2])
+  console.log(resultado)
+}
   return (
     <div id='Table-moedas'
     >
@@ -60,8 +82,8 @@ const Table = () => {
         <tbody>
 
             {Object.keys(lista_moedas).length > 2 && (
-            Object.values(lista_moedas).map((item) => (
-              <tr key={item.code}>
+            Object.values(lista_moedas).map((item, i) => (
+              <tr key={i} onClick={handleTable}>
                 <td>{item.name}</td>
                 <td>{item.bid}</td>
                 <td>{item.ask}</td>
@@ -76,9 +98,27 @@ const Table = () => {
         </tbody>
 
       </table>
-      <div id='lado_table'>
-                <p>asdasdsadasd</p>
-        </div>
+      <div id='lado_table'> 
+          <div id='tela-simulacao'>
+            <p className='titulo-cota'>{valorTroca.length>0? valorTroca[0] :'Clique na tabela para poder simular.'}</p>
+            <form onSubmit={handleResult} className={valorTroca.length < 1 ? 'formDefault': undefined}>
+                <p>Venda: {valorTroca.length>0? valorTroca[2] : ''}</p>
+                
+                <input type="number" placeholder={valorTroca.length > 0 ? valorTroca[0].split('/')[0] : undefined} 
+                value={inputV}
+                onChange={(e)=> SetInputV(e.target.value)}/>
+                <input type="submit" value="enviar" />
+                
+            </form>
+            <p class="resultado">{resultado>0? ` Em ${valorTroca[0].split('/')[1]}, ficou: ${resultado}`: undefined}</p>
+          </div>
+          <div id='nhoinc'>
+            <img src="./static/pigzito.png" alt="porquinho" className='pigzito1'/>
+          </div>
+          <div className='soon'>
+              <h1>Em breve...</h1>
+          </div>
+      </div>
     </div>
   )
 }

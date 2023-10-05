@@ -1,32 +1,31 @@
 #Table-moedas {
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: space-around;  
     width: 99%;  
     margin-top: 2em;
-
 }
 
 /* Table.css */
 table {
-    min-width: 40%;
+    width: 55%;
+    max-height: 370px;
+    max-width: 800px;
+
     display: block;
     overflow-y: scroll;
     color:  #fff;
-    border-collapse: collapse;
-    max-height: 370px;
-    max-width: 800px;
-    background-color: #272626;
-    font-family: Arial, sans-serif;   
-    user-select: none;
-    padding: 15px;
+    
+    
+    padding: 10px;
     margin: 0;
     border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.205);
+    border-collapse: collapse;
+    
+    background-color: #272626;
+    font-family: Arial, sans-serif;   
+    user-select: none;
 
-    
-    /* box-shadow: 5px 5px 50px -30px #fff; */
-    
 }
 
 table::-webkit-scrollbar{
@@ -63,10 +62,107 @@ table tbody tr:hover {
 }
 
 #lado_table{
+    margin: 0;
+    padding: 0;
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tela-simulacao {
+    width: 90%;
     background-color: #272626;
     color: white;
-    width: 40%;
-    margin: 0;
-    border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.205);
+    border-radius: 2px;
+    height: 45%;
+    text-align: center;
+}
+#tela-simulacao .titulo-cota{
+    font-weight: bold;
+    font-size: large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: underline;
+}
+
+#tela-simulacao form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tela-simulacao form p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+#tela-simulacao form input[type='number'] {
+    
+    width: 120px;
+    color: #fff;
+    height: 15px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: #51505000;
+    border: none;
+    border-bottom:1px solid #5649ba;
+}
+
+#tela-simulacao form input[type="number"]::-webkit-inner-spin-button,
+#tela-simulacao form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+#tela-simulacao form input[type='number']:focus {
+    outline: none;
+} 
+
+
+
+.soon{
+    
+    background-color: #272626;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.205);
+    border-radius: 2px;
+    width: 90%;
+    height: 45%;
+}
+
+
+/* animaçao  */
+
+#nhoinc {
+    position: relative;
+    padding: none;
+    margin: none;
+    width: 100%;
+    height: 10%;
+}
+
+.pigzito1{
+    position: absolute;
+    bottom: 5;
+    left: 0;
+    width: 30px; /* Largura da imagem */
+    height: auto;
+    animation: andar 4s linear infinite;
+}
+ @keyframes andar {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: calc(100% - 50px); /* A imagem percorre toda a largura da div */
+    }
+  }
+
+
+
+  .formDefault {
+    opacity: 0;
+    pointer-events: none; /* Isso evita que os elementos ocultos recebam interações do mouse. */
 }

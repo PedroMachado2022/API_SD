@@ -80,6 +80,25 @@ const MenuBolsa = () => {
                     </div>
                 )
                 ))}
+                {Object.keys(dbolsa).length > 2 && (
+                Object.values(dbolsa).map((item) => (
+                    <div className='bolsa_item' ref={ele}>
+                        <div className='titulo_box'>
+                            <p>{item.Ação}</p>
+                            <img src={`./static/logos/${item.Ação}.png`} />
+                        </div>
+
+                        <div className="box_org">
+                            <p className='closed'>{item.Fechamento} $</p>
+                            <div className='footer-box'>
+                                <p className='alta'>{item["Menor Preço"]}</p>
+                                <p className='baixa'>{item["Menor Preço"]}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                )
+                ))}
         
         </div>
     )
