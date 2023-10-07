@@ -5,7 +5,7 @@ export const DadosContext = createContext();
 // provider
 
 export const DadosContextProvider = ({ children }) => {
-    const [Dados, setDados] = useState("Real")
+    const [Dados, setDados] = useState("")
 
     return (
         <DadosContext.Provider value={{Dados, setDados}}>{children}</DadosContext.Provider>

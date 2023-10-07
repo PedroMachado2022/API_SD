@@ -1,57 +1,68 @@
-body {
-  margin: 0;
-  overflow: hidden;
-}
+/* layout da pagina */
 
 .container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
-  overflow: hidden
-}
+  display: flex;
+  overflow: hidden;
+} 
 
-aside {
+#menu-ladinho {
   background-color: #1E1E1E;
-  width: 15%;
+  width: 11%;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 3;
 }
 
-aside .men_lateral {
-  width: 100%;
-  text-align: center;
+#menu {
+  height: 100%;
+  width: 89%;
+  display: flex;
+  flex-direction: column;
 }
 
-#idzito {
-  width: 100%;
-  text-align: center;
-  padding-top: 15px;
-}
-
-header {
+#menu header {
   background-color: #040404;
-  box-shadow: 0px 10px 60px -30px rgba(255, 255, 255, 0.5);
-  z-index: 2;
+  height: 10%;
+}
+
+#menu main {
+  background-color: #040404fb;
+  height: 100%;
+}
+
+#menu footer {
+  border-top: 1px solid white;
+  background-color: #040404;
+  min-height: 55px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 
 
-header .user_menu {
-  background-color: #444;
-  color: #fff;
+/* footer */
+.git-social a {
+  background-color: #1E1E1E;
+  border: 1px solid rgba(255, 255, 255, 0.353);
+  padding: 2px 4px;
+  margin: 5px;
+  font-size: 13px;
+  color: white;
+  display: flex;
+  height: 15px;
+  align-items: center;
+  text-decoration: none;
+
 }
-/* aaaaaaaaaaa */
-#forms_button {
-  background-color: #4E5BF2;
-  border: none;
-  padding: 3px;
+.git-social a:visited{
   color: white;
 }
 
-#form_box {
-  width: 50px;
-  height: 100%;
-  border: 1px solid red;
+.git-social a img{
+  border-right: 1px solid rgba(255, 255, 255, 0.248);
+  margin-right: 5px;
+  min-width: 15px;
+  height: 15px;
 }
+

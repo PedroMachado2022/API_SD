@@ -13,8 +13,9 @@ const MenuBolsa = () => {
 
     
     useEffect(() => {
-        /*https://apisd-production.up.railway.app/api/lista-bolsa*/
-        fetch('http://127.0.0.1:5000/api/lista-bolsa')
+        /*https://apisd-production.up.railway.app/api/lista-bolsa
+        http://127.0.0.1:5000/api/lista-bolsa*/
+        fetch('https://apisd-production.up.railway.app/api/lista-bolsa')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Erro ao enviar")

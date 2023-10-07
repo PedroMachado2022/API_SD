@@ -9,7 +9,7 @@ import Main from './components/Main'
 function App() {
   
   return (
-      <div class='container'> 
+      <div className='container'> 
        
        <div id="menu-ladinho">
           <Aside/>
@@ -18,8 +18,19 @@ function App() {
           <Header/>
           <Main/>
           <footer>
-
-        </footer>
+            <div className='git-social'>
+             <a href='https://github.com/lopesgustavo01' target='_blank'>
+                <img src="./static/git.png" alt="logo git"/>
+                <p>Luiz felipe</p>
+              </a>
+            </div>
+            <div className='git-social'>
+              <a href='https://github.com/PedroMachado2022' target='_blank'>
+                <img src="./static/git.png" alt="logo git"/>
+                <p>Pedro edrom</p>
+              </a>
+            </div>
+         </footer>
         </div>
         
         

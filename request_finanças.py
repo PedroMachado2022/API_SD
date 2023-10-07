@@ -57,15 +57,15 @@ def request_finance(vez):
         # Requisita para a API com o URL desejado
         response = requests.get(url)
         
-        print(f"Requisição: {url} - Resposta: {response}")
+        #print(f"Requisição: {url} - Resposta: {response}")
 
         # Verificamos se a API respondeu corretamente com os dados
         if response.status_code == 200:
             # Pegamos o json enviado pela API
             data = response.json()
-            print(f"Esta vazio seu burro do caralho {data}")
+            #print(f"Esta vazio seu burro do caralho {data}")
 
-            print(f"Requisição: {url} - FOI!\n")
+            #print(f"Requisição: {url} - FOI!\n")
 
             # Verificamos se temos dados dentro do Json
             if "Time Series (Daily)" in data:
@@ -119,7 +119,7 @@ def return_request():
     
     # Chama a função dos requests com o valor "frist"
     data_first = request_finance('first')
-    print(data_first)
+    #print(data_first)
     
     # Da um tempo de 1 minuto antes de realizar o outro request (Necessário para conseguir as 10 ações que queremos utilizar)
     time.sleep(60)
@@ -131,8 +131,8 @@ def return_request():
     all_data = data_first + data_second  
 
     # Cria o arquivo JSON com os dados das duas requisições
-    save_to_json(all_data, 'finance_data.json')
-
+    #save_to_json(all_data, 'finance_data.json')
+    return all_data
     print("Dados combinados de ambos os conjuntos:")
     print(all_data)
 

@@ -49,14 +49,14 @@ def requestAPI():
         # Transforma o DataFrame filtrado para o formado json para  retornar para o FrontEnd
         json_data = dfFiltered.to_json(orient='index')
         
-        save_to_json(json_data, "Cotas_data.json")
-        return '200'
+        #save_to_json(json_data, "Cotas_data.json")
+        return json_data
 
     else:
         print("Falha na solicitação à API. Código de status:", response.status_code)
 
     
-print(requestAPI()) 
+#print(requestAPI()) 
 
 
 "['BRL-JPY', 'BRL-USD', 'BRL-AUD', 'BRL-ARS', 'BRL-CAD', 'BRL-EUR', 'BRL-GBP', 'BRL-NZD', 'BRL-ZAR', 'BRL-RUB', 'BRL-CNY']"

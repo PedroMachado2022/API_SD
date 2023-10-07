@@ -164,5 +164,5 @@ table tbody tr:hover {
 
   .formDefault {
     opacity: 0;
-    pointer-events: none; /* Isso evita que os elementos ocultos recebam interações do mouse. */
+    pointer-events: none; 
 }
