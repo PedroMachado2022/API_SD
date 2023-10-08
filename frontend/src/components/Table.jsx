@@ -28,7 +28,7 @@ const Table = () => {
   // http://127.0.0.1:5000/api/lista
   useEffect(() => {
     
-    fetch('https://apisd-production.up.railway.app/api/lista')
+    fetch('https://apisd-production-dc3a.up.railway.app/api/lista')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Erro ao enviar dados');
