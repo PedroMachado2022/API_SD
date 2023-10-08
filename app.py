@@ -38,7 +38,8 @@ def arq_financas_periodicamente():
 
 @app.route('/obter_ip')
 def obter_ip():
-    endereco_ip = request.remote_addr
+    #endereco_ip = request.remote_addr
+    endereco_ip = request.environ['REMOTE_ADDR']
     request_tempo(endereco_ip)
     return f'O seu endereço IP é: {endereco_ip}'
 
