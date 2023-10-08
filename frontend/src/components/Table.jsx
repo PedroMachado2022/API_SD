@@ -79,7 +79,7 @@ const Table = () => {
             <th>Moeda</th>
             <th>Compra</th>
             <th>Venda</th>
-            <th>Variação</th>
+            <th>Variação(%)</th>
             <th>Data</th>
           </tr>
         </thead>

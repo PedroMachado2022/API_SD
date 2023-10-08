@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from request_BackendAPI import requestAPI
 from request_finanças import return_request
+from ip_tempo import request_tempo
 import json
 import time
 import schedule
@@ -38,6 +39,7 @@ def arq_financas_periodicamente():
 @app.route('/obter_ip')
 def obter_ip():
     endereco_ip = request.remote_addr
+    request_tempo(endereco_ip)
     return f'O seu endereço IP é: {endereco_ip}'
 
 def atualizar_arquivo_periodicamente():
@@ -45,7 +47,6 @@ def atualizar_arquivo_periodicamente():
     while True:
         tabela = requestAPI()
         print('tabelafoi')
-        # Espere um certo tempo antes de atualizar novamente (por exemplo, a cada 10 segundos)
         time.sleep(43200)
 
 def atualizar_arquivo_periodicamente2():
@@ -53,10 +54,9 @@ def atualizar_arquivo_periodicamente2():
     while True:
         bolsa = return_request()
         print('bolsafoi')
-        # Espere um certo tempo antes de atualizar novamente (por exemplo, a cada 10 segundos)
         time.sleep(43200)
 
-# Inicie a função em uma thread separada
+
 thread = Thread(target=atualizar_arquivo_periodicamente)
 thread.daemon = True
 thread.start()

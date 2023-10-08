@@ -29,7 +29,7 @@
 #menu main {
   background-color: #040404fb;
   height: 85%;
-  border: 2px solid red;
+
 }
 
 #menu footer {
@@ -68,3 +68,6 @@
   min-width: 15px;
   height: 15px;
 }
+
+
+
