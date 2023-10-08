@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
-import MoedaContext from "./MoedaContext";
+import {  useState } from "react";
+
 import './Moedas.css'
 
 
 const Moedas = () => {
-  //const {titu} = useContext(MoedaContext) 
+
   
 //   input de busca
 

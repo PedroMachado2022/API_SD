@@ -1,18 +1,17 @@
-import React, {useContext} from 'react'
-import MoedaContext from './MoedaContext.jsx';
+import React, {useContext, useState} from 'react'
 
 import './Aside.css';
-
+import {DadosContext} from './DadosContext'
 
 const Aside = () => {
   
+  const {setDados} = useContext(DadosContext)
   // voltar dado para moedas
-  const a = useContext(MoedaContext);
+  
 
   const handleClick = (e) => {
     const ti = e.target.textContent;
-    setMoeda(t1)
-    console.log(a)
+    setDados(ti)
 }
   
   
@@ -40,7 +39,7 @@ const Aside = () => {
                     </li>
                     <li>
                       <div><img src='./static/euro.png'/></div>
-                      <a href='#' onClick={handleClick}> Euro</a>
+                      <a href='#' onClick={handleClick}>Euro</a>
                     </li>
                     <li>
                       <div><img src='./static/Yen.png'/></div>
@@ -78,6 +77,7 @@ const Aside = () => {
                 <img src="./static/footer.png"  />
               </div>
         </aside>
+        
     </>
   )
 }
