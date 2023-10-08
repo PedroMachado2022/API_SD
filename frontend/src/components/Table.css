@@ -1,49 +1,46 @@
 #Table-moedas {
     display: flex;
-    justify-content: space-around;  
-    width: 99%;  
+    justify-content: space-between;
+    width: 99%;
     margin-top: 2em;
 }
 
 /* Table.css */
 table {
-    width: 55%;
-    max-height: 370px;
-    max-width: 800px;
+
+    height: 63vh;
 
     display: block;
     overflow-y: scroll;
-    color:  #fff;
-    
-    
+    color: #fff;
     padding: 10px;
-    margin: 0;
-    border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, 0.205);
+    margin-left: 2vh;
+    border-radius: 12px;
     border-collapse: collapse;
-    
-    background-color: #272626;
-    font-family: Arial, sans-serif;   
+
+    background-color: #0D1117;
+    font-family: Arial, sans-serif;
     user-select: none;
 
 }
 
-table::-webkit-scrollbar{
+table::-webkit-scrollbar {
     width: 0;
 }
-  
-table th, table td {
+
+table th,
+table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #fff;
-    
+
 }
-  
+
 table th {
     color: #5649ba;
     font-weight: bold;
 }
-  
+
 table tbody tr {
     cursor: pointer;
 }
@@ -51,7 +48,8 @@ table tbody tr {
 table tbody tr:hover {
     background-color: #515050;
 }
-  /* andar tabela*/
+
+/* andar tabela*/
 
 .red {
     color: red;
@@ -61,7 +59,7 @@ table tbody tr:hover {
     color: rgb(4, 187, 4);
 }
 
-#lado_table{
+#lado_table {
     margin: 0;
     padding: 0;
     width: 42%;
@@ -72,14 +70,14 @@ table tbody tr:hover {
 
 #tela-simulacao {
     width: 90%;
-    background-color: #272626;
+    background-color: #0D1117;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.205);
     border-radius: 2px;
     height: 45%;
     text-align: center;
 }
-#tela-simulacao .titulo-cota{
+
+#tela-simulacao .titulo-cota {
     font-weight: bold;
     font-size: large;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -98,7 +96,7 @@ table tbody tr:hover {
 }
 
 #tela-simulacao form input[type='number'] {
-    
+
     width: 120px;
     color: #fff;
     height: 15px;
@@ -106,28 +104,27 @@ table tbody tr:hover {
     text-align: center;
     background-color: #51505000;
     border: none;
-    border-bottom:1px solid #5649ba;
+    border-bottom: 1px solid #5649ba;
 }
 
 #tela-simulacao form input[type="number"]::-webkit-inner-spin-button,
 #tela-simulacao form input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 #tela-simulacao form input[type='number']:focus {
     outline: none;
-} 
+}
 
 
 
-.soon{
-    
-    background-color: #272626;
+.soon {
+
+    background-color: #0D1117;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.205);
-    border-radius: 2px;
+    border-radius: 12px;
     width: 90%;
     height: 45%;
 }
@@ -143,26 +140,30 @@ table tbody tr:hover {
     height: 10%;
 }
 
-.pigzito1{
+.pigzito1 {
     position: absolute;
     bottom: 5;
     left: 0;
-    width: 30px; /* Largura da imagem */
+    width: 30px;
+    /* Largura da imagem */
     height: auto;
     animation: andar 4s linear infinite;
 }
- @keyframes andar {
+
+@keyframes andar {
     0% {
-      left: 0;
+        left: 0;
     }
+
     100% {
-      left: calc(100% - 50px); /* A imagem percorre toda a largura da div */
+        left: calc(100% - 50px);
+        /* A imagem percorre toda a largura da div */
     }
-  }
+}
 
 
 
-  .formDefault {
+.formDefault {
     opacity: 0;
-    pointer-events: none; 
+    pointer-events: none;
 }

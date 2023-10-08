@@ -4,7 +4,7 @@
   height: 100vh;
   display: flex;
   overflow: hidden;
-} 
+}
 
 #menu-ladinho {
   background-color: #1E1E1E;
@@ -23,17 +23,19 @@
 
 #menu header {
   background-color: #040404;
-  height: 10%;
+  height: 5%;
 }
 
 #menu main {
   background-color: #040404fb;
-  height: 100%;
+  height: 85%;
+  border: 2px solid red;
 }
 
 #menu footer {
   border-top: 1px solid white;
-  background-color: #040404;
+  background-color: #040404fb;
+  height: 10%;
   min-height: 55px;
   display: flex;
   justify-content: end;
@@ -55,14 +57,14 @@
   text-decoration: none;
 
 }
-.git-social a:visited{
+
+.git-social a:visited {
   color: white;
 }
 
-.git-social a img{
+.git-social a img {
   border-right: 1px solid rgba(255, 255, 255, 0.248);
   margin-right: 5px;
   min-width: 15px;
   height: 15px;
 }
-
