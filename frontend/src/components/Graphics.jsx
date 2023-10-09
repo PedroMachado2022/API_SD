@@ -1,17 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Graphics = () => {
-  const apiKey = 'K8XIRO1JQMGRM93V'; // Substitua pela sua chave de API
-  const baseCurrency = 'USD'; // Moeda base (Dólar dos EUA)
-  const targetCurrency = 'EUR'; // Moeda alvo (Euro)
+  const [ipAddress, setIpAddress] = useState(null);
+
+  useEffect(() => {
+    // Função para obter o endereço IP do cliente
+    const fetchIpAddress = async () => {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        setIpAddress(data.ip);
+      } catch (error) {
+        console.error('Erro ao obter o endereço IP do cliente:', error);
+      }
+    };
+
+    
+    fetchIpAddress();
+  }, []);
 
   
 
   return (
     <>
-      <p>soon..</p>
+      <p>Endereço IP do cliente: {ipAddress}</p>
+      {/* Você pode exibir as informações de localização e clima aqui com base no endereço IP */}
     </>
   );
 };
 
-export default Graphics;
+export default Graphics;""
