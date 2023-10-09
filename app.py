@@ -6,6 +6,7 @@ import json
 import time
 import schedule
 from threading import Thread
+import requests
 
 app = Flask(__name__)
 
@@ -37,11 +38,17 @@ def arq_financas_periodicamente():
         time.sleep(1)
 
 @app.route('/obter_ip')
-def obter_ip():
-    #endereco_ip = request.remote_addr
-    endereco_ip = request.environ['REMOTE_ADDR']
-    request_tempo(endereco_ip)
-    return f'O seu endereço IP é: {endereco_ip}'
+def get_public_ip():
+    try:
+        # Faça uma solicitação a um serviço de terceiros para obter o endereço IP público do cliente
+        response = requests.get('https://api64.ipify.org?format=json')
+        data = response.json()
+        public_ip = data['ip']
+
+        return jsonify({'public_ip': public_ip})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 def atualizar_arquivo_periodicamente():
     global tabela

@@ -8,7 +8,7 @@ def request_tempo(ip):
     data = response.json()
     
     for key, data in data.items():
-        print(f"{key} : {data}\n")
+        print(f"{key}: {data}\n")
     
     
 
