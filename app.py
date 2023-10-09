@@ -37,18 +37,21 @@ def arq_financas_periodicamente():
         schedule.run_pending()
         time.sleep(1)
 
-@app.route('/obter_ip')
+@app.route('/obter_ip', methods=['POST', 'GET'])
 def get_public_ip():
     try:
-        # Faça uma solicitação a um serviço de terceiros para obter o endereço IP público do cliente
-        response = requests.get('https://api64.ipify.org?format=json')
+        response = requests.get('https://api.ipify.org?format=json')
         data = response.json()
         public_ip = data['ip']
 
-        return jsonify({'public_ip': public_ip})
+        a = request_tempo(public_ip)
+
+        return jsonify(f'Dadinhos: {a}')
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
 
 def atualizar_arquivo_periodicamente():
     global tabela
