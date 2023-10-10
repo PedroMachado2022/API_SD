@@ -1,6 +1,5 @@
 header {
     background-color: #040404;
-    justify-content: space-between;
     flex-direction: row-reverse;
     display: flex;
     box-shadow: 0px 10px 30px -22px rgba(255, 255, 255, 0.788);
@@ -51,4 +50,41 @@ header .api_imgs {
     width: 50%;
     margin-bottom: 15px;
     margin-left: 18px;
+}
+
+#weather{
+    width: 23vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+    margin-right: 10px;
+}
+
+#teste {
+    align-items: start;
+    text-align: end;
+    
+    display: flex;
+    flex-direction: row-reverse;
+    height: 50%;
+}
+
+#icon img{
+    padding-top: 10px;
+    width: 4vh;
+}
+
+#city{
+    text-align: end;
+    margin-right: 5px;
+    width: 100%;
+
+}
+
+#temp{
+    margin-right: 5px;
+    margin-top: 3px;
+    width: 15vh;
 }
