@@ -64,7 +64,7 @@ def atualizar_arquivo_periodicamente2():
     global bolsa
     while True:
         bolsa = return_request()
-        print('bolsafoi')
+        print(bolsa)
         time.sleep(43200)
 
 

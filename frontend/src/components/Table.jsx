@@ -15,20 +15,11 @@ const Table = () => {
   const { Dados } = useContext(DadosContext)
 
 
-
-  // useEffect(()=>{
-  //   if(Dados !== ''){
-  //   Object.values(lista_moedas).map((item)=>{
-  //    if(item.name.includes(Dados)) setMostrarLista(...mostrarLista,  item)
-  //   })}
-  // }, [Dados])
-
-
   // url https://apisd-production.up.railway.app/api/lista
   // http://127.0.0.1:5000/api/lista
   useEffect(() => {
 
-    fetch('https://apisd-production-dc3a.up.railway.app/api/lista')
+    fetch('http://127.0.0.1:5000/api/lista')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Erro ao enviar dados');

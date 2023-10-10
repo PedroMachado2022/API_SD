@@ -129,7 +129,7 @@ def return_request():
 
     # Junta as duas requisições
     all_data = data_first + data_second  
-
+    #print(all_data)
     # Cria o arquivo JSON com os dados das duas requisições
     #save_to_json(all_data, 'finance_data.json')
     return all_data
