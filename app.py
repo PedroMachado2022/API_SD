@@ -37,21 +37,20 @@ def arq_financas_periodicamente():
         schedule.run_pending()
         time.sleep(1)
 
+
 @app.route('/obter_ip', methods=['POST', 'GET'])
 def get_public_ip():
     
         response = request.get_json()
         # print(response)
         public_ip = response['ip']
-        # print(public_ip)
+        #print(public_ip)
 
         a = request_tempo(public_ip)
         
         return jsonify(a)
 
     
-
-
 
 def atualizar_arquivo_periodicamente():
     global tabela

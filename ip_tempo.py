@@ -3,17 +3,18 @@ import requests
 # HG KEY 9af41c80
 
 def request_aux(long, lat, ip):
-        response = requests.get(f"https://api.hgbrasil.com/weather?key=9af41c80&{long}&{lat}&user_ip={ip}")
+        response = requests.get(f"https://api.hgbrasil.com/weather?key=9af41c80&lat={lat}&lon={long}&user_ip={ip}")
+        
         data = response.json()
         return data
 
 def request_tempo(ip):
 
     response = requests.get(f'https://api.ip2location.io/?key=91B1F61713031B2D4CFB3198E6B7885D&ip={ip}')
-    
+    #print(response.json())
     data = response.json()
    
-    data_weather = request_aux(data['latitude'], data['longitude'], ip)
+    data_weather = request_aux( data['longitude'],data['latitude'], ip)
     
     #teste = data_weather['results'][0]
 

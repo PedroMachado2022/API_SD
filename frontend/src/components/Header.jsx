@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 
+
 const Container = () => {
   const [ipAddress, setIpAddress] = useState(null);
   const [weather, setWeather] = useState();
 
+  // funcão para fazer request no servidor da 'localizacão e tempo' baseada no ip do client
   const enviarIp = async (ip) => {
     try {
-      const response = await fetch('https://apisd-production.up.railway.app/obter_ip', {
+      const response = await fetch('https://apisd-production.up.railway.app//obter_ip', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,7 +27,9 @@ const Container = () => {
       console.error('Erro ao processar a solicitação:', error);
     }
   };
-  useEffect(()=> {console.log(weather)}, [weather])
+  
+  
+  // Função executada sempre que abrir a pagina, enviando um request para api.ipify.org, a fim de obter o ip do cliente
   useEffect(() => {
     const fetchIpAddress = async () => {
       try {
@@ -41,6 +45,8 @@ const Container = () => {
     fetchIpAddress();
   }, []);
 
+
+    // --------------html do cabeçalho------------- 
   return (
     <>
       <header>

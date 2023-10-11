@@ -31,7 +31,7 @@ const Aside = () => {
                   <ul>
                     <li>
                       <div><img src='./static/Doll.png'/></div>
-                      <a href='#' onClick={handleClick}>Dolar</a>
+                      <a href='#' onClick={handleClick}>Dólar</a>
                     </li>
                     <li>
                       <div><img src='./static/Real.png'/></div>
@@ -43,7 +43,7 @@ const Aside = () => {
                     </li>
                     <li>
                       <div><img src='./static/Yen.png'/></div>
-                      <a href='#' onClick={handleClick}>Yen</a>
+                      <a href='#' onClick={handleClick}>Iene</a>
                     </li>
                     
                   </ul>
