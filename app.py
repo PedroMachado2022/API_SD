@@ -39,18 +39,17 @@ def arq_financas_periodicamente():
 
 @app.route('/obter_ip', methods=['POST', 'GET'])
 def get_public_ip():
-    try:
+    
         response = request.get_json()
-        print(response)
+        # print(response)
         public_ip = response['ip']
-        
+        # print(public_ip)
 
         a = request_tempo(public_ip)
+        
+        return jsonify(a)
 
-        return jsonify(f'Dadinhos: {a}')
-
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+    
 
 
 
