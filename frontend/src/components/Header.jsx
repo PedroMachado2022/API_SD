@@ -3,11 +3,11 @@ import './Header.css';
 
 const Container = () => {
   const [ipAddress, setIpAddress] = useState(null);
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState();
 
   const enviarIp = async (ip) => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/obter_ip', {
+      const response = await fetch('https://apisd-production.up.railway.app/obter_ip', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
