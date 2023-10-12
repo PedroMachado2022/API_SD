@@ -109,17 +109,12 @@ def request_finance(vez):
     # Retornamos o dicionário para utilizar em outro lugar
     return all_data
 
-# Função para salvar em um arquivo JSON
-def save_to_json(data, filename):
-    with open(filename, 'w') as file:
-        json.dump(data, file)
 
 # Função que realiza tudo desse script
 def return_request():
     
     # Chama a função dos requests com o valor "frist"
     data_first = request_finance('first')
-    #print(data_first)
     
     # Da um tempo de 1 minuto antes de realizar o outro request (Necessário para conseguir as 10 ações que queremos utilizar)
     time.sleep(60)
@@ -129,11 +124,7 @@ def return_request():
 
     # Junta as duas requisições
     all_data = data_first + data_second  
-    #print(all_data)
-    # Cria o arquivo JSON com os dados das duas requisições
-    #save_to_json(all_data, 'finance_data.json')
+    
+    # Retorna os dados
     return all_data
-    print("Dados combinados de ambos os conjuntos:")
-    print(all_data)
-
-#return_request()
+   

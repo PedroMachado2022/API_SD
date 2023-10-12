@@ -27,8 +27,8 @@ const Container = () => {
       console.error('Erro ao processar a solicitação:', error);
     }
   };
-  
-  
+
+
   // Função executada sempre que abrir a pagina, enviando um request para api.ipify.org, a fim de obter o ip do cliente
   useEffect(() => {
     const fetchIpAddress = async () => {
@@ -46,13 +46,13 @@ const Container = () => {
   }, []);
 
 
-    // --------------html do cabeçalho------------- 
+  // --------------html do cabeçalho------------- 
   return (
     <>
       <header>
-        
+
         <div className="user_menu"></div>
-        
+
 
         <div id="weather">
           <div id="teste">
@@ -92,6 +92,19 @@ const Container = () => {
             >
               <img id="bb" src="./static/awesomeAPI.png" alt="awesomeAPI" />
             </a>
+
+            <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
+              <img id="cc" src="./static/hgweather.png" alt="Brapi API" />
+            </a>
+
+            <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
+              <img id="dd" src="./static/ipfy.png" alt="Brapi API" />
+            </a>
+
+            <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
+              <img id="ee" src="./static/ip2.png" alt="Brapi API" />
+            </a>
+
           </div>
         </div>
       </header>
