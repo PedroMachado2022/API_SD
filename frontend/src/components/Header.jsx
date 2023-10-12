@@ -51,62 +51,84 @@ const Container = () => {
     <>
       <header>
 
-        <div className="user_menu"></div>
+        <div id='user_weather'>
 
-
-        <div id="weather">
-          <div id="teste">
-            <div id="icon">
-              {weather && (
-                <img
-                  src={`./static/climate/${weather['Clima']}.png`}
-                  alt="Clima"
-                />
-              )}
+          <div className="user_menu">
+            <div id='user_icon'>
+              <a href="https://www.ip2location.io" target="_blank" rel="noopener noreferrer">
+                <img id="icon" src="./static/user_1.png" alt="ip2API" />
+              </a>
             </div>
-            <div id="temp">
+
+            <div id='user_name'>
+              <p id='p_g'>
+                Welcome
+              </p>
+              <p id='p_p'>
+                User
+              </p>
+            </div>
+          </div>
+
+          <div id="weather">
+            <div id="teste">
+              <div id="icon">
+                {weather && (
+                  <img
+                    src={`./static/climate/${weather['Clima']}.png`}
+                    alt="Clima"
+                  />
+                )}
+              </div>
+              <div id="temp">
+                {weather && (
+                  <p>{weather['Temperatura']}ºC</p>
+                )}
+              </div>
+            </div>
+            <div id="city">
               {weather && (
-                <p>{weather['Temperatura']}ºC</p>
+                <p>{weather['Cidade']}</p>
               )}
             </div>
           </div>
-          <div id="city">
-            {weather && (
-              <p>{weather['Cidade']}</p>
-            )}
+
+        </div>
+
+        <div id="div_pai">
+          <div className="apis">
+            <div className="api_txt">
+              <p>API'S</p>
+            </div>
+            <div className="api_imgs">
+              <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
+                <img id="aa" src="./static/brapi.png" alt="Brapi API" />
+              </a>
+              <a
+                href="https://docs.awesomeapi.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img id="bb" src="./static/awesomeAPI.png" alt="awesomeAPI" />
+              </a>
+
+              <a href="https://hgbrasil.com/status/weather" target="_blank" rel="noopener noreferrer">
+                <img id="cc" src="./static/hgweather.png" alt="WeatherAPI" />
+              </a>
+
+              <a href="https://www.ipify.org" target="_blank" rel="noopener noreferrer">
+                <img id="dd" src="./static/ipfy.png" alt="ipfyAPI" />
+              </a>
+
+              <a href="https://www.ip2location.io" target="_blank" rel="noopener noreferrer">
+                <img id="ee" src="./static/ip2.png" alt="ip2API" />
+              </a>
+
+            </div>
           </div>
         </div>
 
-        <div className="apis">
-          <div className="api_txt">
-            <p>API'S</p>
-          </div>
-          <div className="api_imgs">
-            <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
-              <img id="aa" src="./static/brapi.png" alt="Brapi API" />
-            </a>
-            <a
-              href="https://docs.awesomeapi.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img id="bb" src="./static/awesomeAPI.png" alt="awesomeAPI" />
-            </a>
 
-            <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
-              <img id="cc" src="./static/hgweather.png" alt="Brapi API" />
-            </a>
-
-            <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
-              <img id="dd" src="./static/ipfy.png" alt="Brapi API" />
-            </a>
-
-            <a href="https://brapi.dev" target="_blank" rel="noopener noreferrer">
-              <img id="ee" src="./static/ip2.png" alt="Brapi API" />
-            </a>
-
-          </div>
-        </div>
       </header>
     </>
   );

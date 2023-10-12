@@ -1,6 +1,7 @@
 header {
     background-color: #040404;
     flex-direction: row-reverse;
+    align-content: space-between;
     display: flex;
     box-shadow: 0px 10px 30px -22px rgba(255, 255, 255, 0.788);
     padding-bottom: 0px;
@@ -8,16 +9,16 @@ header {
     z-index: 2;
 }
 
-header .user_menu {
-    background-color: #444;
-    color: #fff;
-    margin-right: 70px;
-    height: 100%;
-    width: 115px;
+
+/* APIS UTILZIADAS */
+#div_pai {
+    width: 135vh;
+    display: flex;
 }
 
 header .apis {
-    width: 40%;
+    width: 100%;
+    max-width: 135vh;
     display: flex;
 }
 
@@ -29,30 +30,97 @@ header .api_txt {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: min-content;
     height: min-content;
-    margin-left: 30px;
-    margin-top: 5px;
+    margin-left: 8px;
+    margin-top: -15px;
 }
 
 header .api_imgs {
-    height: 80%;
-    width: auto;
-    margin-top: 8px;
-    margin-left: 20px;
+    width: 100vh;
+    max-width: 100vh;
+    height: 5vh;
+    margin-top: 3px;
+    margin-left: 2px;
+    align-content: space-between;
+    align-items: center;
 
 }
 
 #aa {
-    width: 30%;
-    margin-bottom: 12px;
+    max-width: 20vh;
 }
 
 #bb {
-    width: 50%;
-    margin-bottom: 15px;
-    margin-left: 18px;
+    max-width: 20vh;
 }
 
-#weather{
+#cc {
+    max-width: 15vh;
+
+}
+
+#dd {
+    max-width: 15vh;
+
+
+}
+
+#ee {
+    max-width: 20vh;
+}
+
+
+/* USUARIO E CLIMA */
+#user_weather {
+    display: flex;
+    align-content: space-between;
+    flex-direction: row-reverse;
+    width: 45vh;
+    border: 1px solid purple;
+}
+
+header .user_menu {
+    background-color: #444;
+    color: #fff;
+    margin-right: 70px;
+    height: 100%;
+    width: 18vh;
+    display: flex;
+}
+
+#user_icon {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+#icon {
+    width: 50px;
+}
+
+#user_name {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gold;
+}
+
+#p_g {
+    font-size: 15px;
+    border: 1px solid blue;
+    margin-left: 2px;
+}
+
+#p_p {
+    font-size: 13px;
+    margin-left: 2px;
+    border: 1px solid red;
+}
+
+#weather {
     width: 23vh;
     color: white;
     display: flex;
@@ -60,30 +128,31 @@ header .api_imgs {
     justify-content: space-around;
     align-items: end;
     margin-right: 10px;
+    border: 1px solid red;
 }
 
 #teste {
     align-items: start;
     text-align: end;
-    
+
     display: flex;
     flex-direction: row-reverse;
     height: 50%;
 }
 
-#icon img{
+#icon img {
     padding-top: 10px;
     width: 4vh;
 }
 
-#city{
+#city {
     text-align: end;
     margin-right: 5px;
     width: 100%;
 
 }
 
-#temp{
+#temp {
     margin-right: 5px;
     margin-top: 3px;
     width: 15vh;
