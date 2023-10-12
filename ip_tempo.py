@@ -24,7 +24,6 @@ def request_tempo(ip):
     #Chama da função auxiliar para receber o clima baseado na GEOLOCALIZAÇÃO.
     data_weather = request_aux( data['longitude'],data['latitude'], ip)
     
-    
     # Dados que serão utilizados no Front-end (Data, Cidade, Clima e Temperatura)
     data_clean = {'Data': data_weather['results']['date'], 'Cidade': data_weather['results']['city'],
                    'Clima': data_weather['results']['condition_slug'], 'Temperatura': data_weather['results']['temp']}
@@ -32,5 +31,3 @@ def request_tempo(ip):
     # Retorno dos dados
     return data_clean
     
-
-print(request_tempo('179.189.130.247'))
