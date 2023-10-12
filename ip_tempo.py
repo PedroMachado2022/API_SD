@@ -33,4 +33,4 @@ def request_tempo(ip):
     return data_clean
     
 
-
+print(request_tempo('179.189.130.247'))

@@ -4,6 +4,7 @@ from request_finanças import return_request
 from ip_tempo import request_tempo
 import time
 from threading import Thread
+from graphics import obter_historico
 
 # Aplicativo Flask
 app = Flask(__name__)
@@ -13,6 +14,9 @@ TABELA = ''
 
 # Variável que guarda os dados das ações. Ex: (ITAÚ, TESLA)
 BOLSA = ''
+
+# Variável que guarda os dados do hitorico de 15dias da cotação dola/real
+GRAFICO = ''
 
 # Rota padrão para renderizar o HTML.
 @app.route("/")
@@ -30,6 +34,12 @@ def enviar_lista():
 def envia_financas():
     # Rertorna um json com os dados
     return jsonify(BOLSA)
+
+# Rota que onde ocorre a comunicação FRONT-END/BACK-END. (Envia dados historicos de cotas)
+@app.route('/api/historico', methods=['POST', 'GET'])
+def enviar_historico():
+    #Retorna json com o historico e o nome
+    return jsonify(GRAFICO)
 
 
 # Função que chama o Script que faz as requisições para a API das acões.
@@ -80,6 +90,18 @@ def atualizar_bolsa():
         # 12h de delay
         time.sleep(43200)
 
+def Atualiza_Grafico():
+    global GRAFICO
+
+     # Looping infinito, acontecendo a cada 12h
+    while True:
+        # Chamada da função que é responsável pelas requisições de historico de gráficos.
+        GRAFICO = obter_historico()
+        print('Grafico: ok')
+        # 12h de delay
+        time.sleep(43200)
+     
+
 # Thread responsável por atualizar as cotações
 thread = Thread(target=atualizar_tabela)
 thread.daemon = True
@@ -89,6 +111,10 @@ thread.start()
 thread2 = Thread(target=atualizar_bolsa)
 thread2.daemon = True
 thread2.start()
+
+thread3 = Thread(target=Atualiza_Grafico)
+thread3.daemon = True
+thread3.start()
 
 # Execução do aplicativo
 if __name__ == "__main__":

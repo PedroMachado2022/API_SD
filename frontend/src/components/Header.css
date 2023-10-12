@@ -45,27 +45,11 @@ header .api_imgs {
 
 }
 
-#aa {
-    max-width: 20vh;
-}
-
-#bb {
-    max-width: 20vh;
-}
-
-#cc {
-    max-width: 15vh;
-
-}
-
-#dd {
-    max-width: 15vh;
-
-
-}
-
-#ee {
-    max-width: 20vh;
+.api_imgs a img {
+    width: auto;
+    height: 30px;
+    margin: 10px 5px; 
+    filter: grayscale(1);
 }
 
 
@@ -74,17 +58,17 @@ header .api_imgs {
     display: flex;
     align-content: space-between;
     flex-direction: row-reverse;
-    width: 45vh;
-    border: 1px solid purple;
+    width: 50vh;
+    
 }
 
 header .user_menu {
     background-color: #444;
     color: #fff;
-    margin-right: 70px;
+    margin: 0 50px 0 0;
     height: 100%;
-    width: 18vh;
-    display: flex;
+    width: 20vh;
+    display: flex;   
 }
 
 #user_icon {
@@ -93,11 +77,10 @@ header .user_menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
 }
 
-#icon {
-    width: 50px;
+#user_icon img {
+    width: 80%;
 }
 
 #user_name {
@@ -105,19 +88,23 @@ header .user_menu {
     height: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid gold;
-}
 
+}
+#user_name p {
+    padding: 0;
+    margin: 0;
+}
 #p_g {
+    margin-top: 17px !important;
     font-size: 15px;
-    border: 1px solid blue;
     margin-left: 2px;
+    text-align: center;
 }
 
 #p_p {
     font-size: 13px;
     margin-left: 2px;
-    border: 1px solid red;
+    text-align: center;
 }
 
 #weather {
@@ -128,7 +115,7 @@ header .user_menu {
     justify-content: space-around;
     align-items: end;
     margin-right: 10px;
-    border: 1px solid red;
+    
 }
 
 #teste {

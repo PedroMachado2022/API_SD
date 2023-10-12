@@ -23,7 +23,7 @@ const Table = () => {
   // http://127.0.0.1:5000/api/lista
   useEffect(() => {
 
-    fetch('https://apisd-production.up.railway.app/api/lista')
+    fetch('https://apisd-production.up.railway.app//api/lista')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Erro ao enviar dados');
@@ -71,43 +71,40 @@ const Table = () => {
     e.preventDefault()
   }
   return (
-    <div id='Table-moedas'
-    >
+    <div id='Table-moedas'>
+      <div id='container_table'>
+        <table>
+          <thead>
+            <tr>
+              <th >Moeda</th>
+              <th >Compra</th>
+              <th >Venda</th>
+              <th >Variação(%)</th>
+              <th >Data</th>
+            </tr>
+          </thead>
+          <tbody>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Moeda</th>
-            <th>Compra</th>
-            <th>Venda</th>
-            <th>Variação(%)</th>
-            <th>Data</th>
-          </tr>
-        </thead>
-        <tbody>
+          {Object.keys(lista_moedas).length > 0 && (
+            Object.values(lista_moedas).map((item, i) => {
+              if (!Dados || Dados.length === 0 || item.name.includes(Dados)) {
+                return (
+                  <tr key={i} onClick={handleTable}>
+                    <td>{item.name}</td>
+                    <td>{item.bid}</td>
+                    <td>{item.ask}</td>
+                    <td className={item.pctChange < 0 ? 'red' : 'green'}>{item.pctChange}</td>
+                    <td>{item.create_date}</td>
+                  </tr>
+              );
+            }
+              return null;
+            })
+          )}
+          </tbody>
+        </table>
+      </div>
 
-        {Object.keys(lista_moedas).length > 0 && (
-  Object.values(lista_moedas).map((item, i) => {
-    if (!Dados || Dados.length === 0 || item.name.includes(Dados)) {
-      return (
-        <tr key={i} onClick={handleTable}>
-          <td>{item.name}</td>
-          <td>{item.bid}</td>
-          <td>{item.ask}</td>
-          <td className={item.pctChange < 0 ? 'red' : 'green'}>{item.pctChange}</td>
-          <td>{item.create_date}</td>
-        </tr>
-      );
-    }
-    return null;
-  })
-)}
-
-
-
-        </tbody>
-
-      </table>
       <div id='lado_table'>
         <div id='tela-simulacao'>
 
@@ -124,9 +121,7 @@ const Table = () => {
           </form>
           
         </div>
-        <div id='nhoinc'>
-          <img src="./static/pigzito.png" alt="porquinho" className='pigzito1' />
-        </div>
+        
         <div className='soon'>
           <Graphics />
         </div>

@@ -76,7 +76,7 @@ table tbody tr:hover {
     background-color: #0D1117;
     color: white;
     border-radius: 12px;
-    height: 45%;
+    height: 35%;
     text-align: center;
 }
 
@@ -88,7 +88,7 @@ table tbody tr:hover {
 }
 
 #tela-simulacao form {
-    margin: 0 auto;
+    margin: 0 auto 10px;
     width: 70%;
     display: flex;
     align-items: center;
@@ -142,45 +142,15 @@ table tbody tr:hover {
 
 
 .soon {
-    background-color: #0D1117;
-    border-radius: 12px;
+    padding-top: 20px;
     color: white;
-    border-radius: 12px;
-    width: 90%;
-    height: 45%;
+    width: 95%;
+    height: 50%;
+    
 }
 
 
 /* animaçao  */
-
-#nhoinc {
-    position: relative;
-    padding: none;
-    margin: none;
-    width: 100%;
-    height: 10%;
-}
-
-.pigzito1 {
-    position: absolute;
-    bottom: 5;
-    left: 0;
-    width: 30px;
-    /* Largura da imagem */
-    height: auto;
-    animation: andar 4s linear infinite;
-}
-
-@keyframes andar {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: calc(100% - 50px);
-        /* A imagem percorre toda a largura da div */
-    }
-}
 
 
 

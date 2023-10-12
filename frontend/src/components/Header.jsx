@@ -4,7 +4,7 @@ import './Header.css';
 
 const Container = () => {
   const [ipAddress, setIpAddress] = useState(null);
-  const [weather, setWeather] = useState();
+  const [weather, setWeather] = useState({'Data': '12/10/2023', 'Cidade': 'Rio Grande, RS', 'Clima': 'cloudly_day', 'Temperatura': 12});
 
   // funcão para fazer request no servidor da 'localizacão e tempo' baseada no ip do client
   const enviarIp = async (ip) => {
@@ -55,9 +55,7 @@ const Container = () => {
 
           <div className="user_menu">
             <div id='user_icon'>
-              <a href="https://www.ip2location.io" target="_blank" rel="noopener noreferrer">
                 <img id="icon" src="./static/user_1.png" alt="ip2API" />
-              </a>
             </div>
 
             <div id='user_name'>
