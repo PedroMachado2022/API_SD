@@ -1,0 +1,28 @@
+#conte {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#conte aside{
+    height: 100%;
+    width: 28vh;
+}
+#conte #main {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#conte #docu{
+    height: 99%;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+    background-color: #0D1117;
+    color: white;
+}
