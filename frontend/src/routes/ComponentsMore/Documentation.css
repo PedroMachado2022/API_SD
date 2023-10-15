@@ -10,7 +10,7 @@ main {
 main #conteudo {
     background-color: rgba(39, 38, 38, 0.71);
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .texto span{
@@ -57,25 +57,38 @@ h3{
     background-color: rgb(43, 43, 43);
     padding-bottom: 20px;
 }
-.box-img {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    
-    padding: 20px;
-}
-
 .bloco {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
+
+    margin: 0 auto;
 }
 
-.bloco .texto {
-    justify-content: center;
-    align-items: center;
-    width: 40%;
+.box-img {
+    display: flex;
+    min-width: 50%;
+    min-height: 100%;
+    background-color: rgba(64, 64, 64, 0.232);
+}
+.box-img img{
+    margin: 0 auto;
+    align-self: center;
+    height: auto;
+    max-width: 360px;
+}
 
+
+.bloco .texto {
+    text-align:justify;
+    width: 40%;
+    height: 50vh;
+}
+.bloco .texto h4 {
+    margin-bottom: 20px;
+}
+.bloco .texto p{
+    margin-top: 50px;
 }
 
 .img-texto {
@@ -85,7 +98,60 @@ h3{
     padding: 20px;
 }
 
-.img-texto img {
-    height: 250px;
-    width: auto;
-}
+/* carousel */
+
+/* Seletor para a seta da esquerda */
+.carousel.carousel-slider .control-prev.control-arrow:before {
+    font-size: 30px; 
+    margin: 0 200px 0 100px ;
+  }
+  
+  /* Seletor para a seta da direita */
+  .carousel.carousel-slider .control-next.control-arrow:before {
+    
+    margin: 0 100px 0 200px;
+    font-size: 100px; 
+  }
+  
+
+  
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.268);
+    background-color: #04040467;
+    height: 10%;
+    min-height: 55px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+  
+  
+  /* footer */
+  .git-social {
+    padding-bottom: 5px;
+  }
+  .git-social a {
+    background-color: #1E1E1E;
+    border: 1px solid rgba(255, 255, 255, 0.353);
+    padding: 2px 4px;
+    margin: 5px;
+    font-size: 13px;
+    color: white;
+    display: flex;
+    height: 15px;
+    align-items: center;
+    text-decoration: none;
+  
+  }
+  
+  .git-social a:visited {
+    color: white;
+  }
+  
+  .git-social a img {
+    border-right: 1px solid rgba(255, 255, 255, 0.248);
+    margin-right: 5px;
+    min-width: 15px;
+    height: 15px;
+  }
+  
