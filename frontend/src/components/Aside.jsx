@@ -3,6 +3,8 @@ import React, {useContext, useState} from 'react'
 import './Aside.css';
 import {DadosContext} from './DadosContext'
 
+import { Link } from 'react-router-dom';
+
 const Aside = () => {
   
   const {setDados} = useContext(DadosContext)
@@ -20,7 +22,7 @@ const Aside = () => {
         <aside>
           
             <div id="logo">
-              <a href="#">
+              <a href="/">
                 <img src='./static/logo.png'/>
               </a>
             </div>
@@ -51,25 +53,11 @@ const Aside = () => {
 
 
                 <div className="navbar">
-                  <h2>Moedas</h2>
+                  <h2>More</h2>
                     <ul>
                       <li>
-                        <div><img src='./static/Doll.png'/></div>
-                        <a href='#' onClick={handleClick}>Dolar</a>
+                        <a ><Link to="/more">Saiba Mais</Link></a>
                       </li>
-                      <li>
-                        <div><img src='./static/Real.png'/></div>
-                        <a href='#' onClick={handleClick}>Real</a>
-                      </li>
-                      <li>
-                        <div><img src='./static/euro.png'/></div>
-                        <a href='#' onClick={handleClick}> Euro</a>
-                      </li>
-                      <li>
-                        <div><img src='./static/Yen.png'/></div>
-                        <a href='#' onClick={handleClick}>Yen</a>
-                      </li>
-                      
                     </ul>
                 </div>
               </div>

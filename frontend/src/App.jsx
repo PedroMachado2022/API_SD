@@ -21,7 +21,7 @@ function App() {
         <Header />
         <Main />
         <footer>
-          <Link to="/more">more</Link>
+          
           <div className='git-social'>
             <a href='https://github.com/lopesgustavo01' target='_blank'>
               <img src="./static/git.png" alt="logo git" />

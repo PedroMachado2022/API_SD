@@ -7,7 +7,7 @@ import './More.css'
 const More = () => {
   return (
     <div id='conte'>
-        <div>
+        <div id='menu-ladinho'>
             <Aside />
         </div>
         <div id='main'>

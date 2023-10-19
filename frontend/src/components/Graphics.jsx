@@ -29,7 +29,7 @@ const [data, setData] = useState({
   ];
 
   const customTheme = {
-    background: 'black', // Cor de fundo preta
+    background: '#0D1117', // Cor de fundo preta
     axis: {
       legend: {
         text: {
