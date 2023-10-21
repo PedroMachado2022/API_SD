@@ -86,7 +86,7 @@ def atualizar_bolsa():
     while True:
         # Chamada da função que é responsável pelas requisições de ações.
         BOLSA = return_request()
-        
+        print(BOLSA)
         # 12h de delay
         time.sleep(43200)
 

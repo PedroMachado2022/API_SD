@@ -1,27 +1,23 @@
 #Table-moedas {
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     width: 99%;
-    margin-top: 2em;
 }
 
 /* Table.css */
 table {
-
     height: 63vh;
-
     display: block;
     overflow-y: scroll;
     color: #fff;
-    padding: 10px;
     margin-left: 2vh;
     border-radius: 12px;
     border-collapse: collapse;
-
     background-color: #0D1117;
     font-family: Arial, sans-serif;
     user-select: none;
-
 }
 
 table::-webkit-scrollbar {
@@ -102,7 +98,7 @@ table tbody tr:hover {
     font-size: 16px;
     border-bottom: 1px solid #5649ba;
     background-color: #ffffff09;
-    width: 120px;
+    width: 50%;
     height: 20px;
     text-align: center;
     padding: 0;
@@ -118,7 +114,7 @@ table tbody tr:hover {
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
     background-color: #ffffff09;
-    width: 120px;
+    width: 50%;
     color: #dddcdc;
     height: 20px;
     text-align: center;
@@ -140,7 +136,6 @@ table tbody tr:hover {
 }
 
 
-
 .soon {
     padding-top: 20px;
     color: white;
@@ -157,4 +152,51 @@ table tbody tr:hover {
 .formDefault {
     opacity: 0;
     pointer-events: none;
+}
+
+
+@media (max-width: 1000px) {
+
+    #Table-moedas{
+        overflow: scroll;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    #lado_table{
+        padding-top: 40px;
+        height: 60%;
+        width: 90%;
+    }
+
+    #tela-simulacao {
+
+    }
+
+    table {
+        height: 40vh;
+        
+    }
+}   
+
+@media (max-width: 600px){
+    table {
+        width: 100%;
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
+    }
+
+    table th {
+        font-size: 15px;
+    }
+
+    table th,
+table td {
+    padding: 2px;
+    text-align: center;
+
+
+}
 }

@@ -15,7 +15,6 @@ def hello_world():
     return render_template("index.html")
 
 
-
 @app.route('/api/lista', methods=['POST'])
 def enviar_lista():
     

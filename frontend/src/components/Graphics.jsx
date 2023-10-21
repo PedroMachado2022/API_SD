@@ -77,7 +77,7 @@ const [data, setData] = useState({
   }, []);
 
   return (
-    <div style={{ height: '100%' }}>
+    <div style={{ height: '100%' }} id='grafico'>
       <h6 id='titulo_gra'>{data.name}</h6> {/* Adicionar um título acima do gráfico */}
       <ResponsiveLine
         data={chartData}
