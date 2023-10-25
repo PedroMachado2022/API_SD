@@ -124,7 +124,8 @@ def return_request():
 
     # Junta as duas requisições
     all_data = data_first + data_second  
-    
+    print(all_data)
     # Retorna os dados
     return all_data
-   
+
+

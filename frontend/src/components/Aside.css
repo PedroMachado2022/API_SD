@@ -45,6 +45,7 @@ aside {
     height: 40px;
     margin: auto;
     color: #1E1E1E;
+    padding-bottom: 1px;
 }
 
 .navbar ul li a {
@@ -65,12 +66,12 @@ aside {
 }
 
 .navbar ul li:hover {
-    background-color: #616161;
-    opacity: .9;
+    background-color: #fdfdfd10;
     color: #1E1E1E;
-    padding-left: 1px;
-    border-left: 4px solid #393939;
-    border-bottom: 4px solid #393939;
+    padding-right: 1px;
+    padding-bottom: 0px;
+    border-left: 1px solid #393939;
+    border-bottom: 2px solid #393939;
 }
 
 .navbar ul li a {
@@ -108,4 +109,15 @@ aside {
 }
 #footer-lado img:hover {
     width: 85%;
+}
+
+#more {
+    position: relative;
+    left: -30px;
+}
+#more a{
+
+    width: 100%;
+    
+    font-size: 15px;
 }

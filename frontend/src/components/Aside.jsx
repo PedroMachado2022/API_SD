@@ -54,11 +54,13 @@ const Aside = () => {
 
                 <div className="navbar">
                   <h2>More</h2>
-                    <ul>
-                      <li>
-                        <a ><Link to="/more">Saiba Mais</Link></a>
-                      </li>
-                    </ul>
+                  <a className=''></a>
+                  <ul>
+                    <li>
+                      <div id=''></div>
+                      <a id='more'><Link to="/more">Saiba Mais</Link></a>
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div id="footer-lado">

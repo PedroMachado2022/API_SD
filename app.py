@@ -13,7 +13,7 @@ app = Flask(__name__)
 TABELA = ''
 
 # Variável que guarda os dados das ações. Ex: (ITAÚ, TESLA)
-BOLSA = ''
+BOLSA = []
 
 # Variável que guarda os dados do hitorico de 15dias da cotação dola/real
 GRAFICO = ''
@@ -72,6 +72,7 @@ def atualizar_tabela():
     while True:
         # Chamada da função que é responsável pelas requisições de cotações.
         TABELA = requestAPI()
+        print('Tabela: ok')
         
         # 12h de delay
         time.sleep(43200)
@@ -86,7 +87,7 @@ def atualizar_bolsa():
     while True:
         # Chamada da função que é responsável pelas requisições de ações.
         BOLSA = return_request()
-        print(BOLSA)
+        print('Bolsa: ok')
         # 12h de delay
         time.sleep(43200)
 
@@ -118,5 +119,5 @@ thread3.start()
 
 # Execução do aplicativo
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
 

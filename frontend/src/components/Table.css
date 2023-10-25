@@ -59,11 +59,13 @@ table tbody tr:hover {
 }
 
 #lado_table {
+
     margin: 0;
     padding: 0;
     width: 42%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -88,7 +90,7 @@ table tbody tr:hover {
     width: 70%;
     display: flex;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 6vh;
     justify-content: space-between;
 }
 
@@ -137,11 +139,10 @@ table tbody tr:hover {
 
 
 .soon {
-    padding-top: 20px;
+    max-height: 280px;
     color: white;
     width: 95%;
     height: 50%;
-    
 }
 
 
@@ -158,7 +159,7 @@ table tbody tr:hover {
 @media (max-width: 1000px) {
 
     #Table-moedas{
-        overflow: scroll;
+
         flex-wrap: wrap;
         justify-content: center;
 
@@ -170,9 +171,7 @@ table tbody tr:hover {
         width: 90%;
     }
 
-    #tela-simulacao {
 
-    }
 
     table {
         height: 40vh;

@@ -3,10 +3,21 @@ import './MenuBolsa.css';
 
 const MenuBolsa = () => {
   const bolsaBoxRef = useRef(null);
+
   
-  const [dbolsa, setDbolsa] = useState([{'Ação': 'ITUB3.SAO', 'Data': '2023-10-20', 'Fechamento': 23.13, 'Maior Preço': 23.26, 'Menor Preço': 22.86}, {'Ação': 'GOOG', 'Data': '2023-10-20', 'Fechamento': 136.74, 'Maior Preço': 139.04, 'Menor Preço': 136.245}, {'Ação': 'META', 'Data': '2023-10-20', 'Fechamento': 308.65, 'Maior Preço': 315.3, 'Menor Preço': 306.47}, {'Ação': 'IBM', 'Data': '2023-10-20', 'Fechamento': 137.16, 'Maior Preço': 139.27, 'Menor Preço': 137.12}, {'Ação': 'TSLA', 'Data': '2023-10-20', 'Fechamento': 211.99, 'Maior Preço': 218.8606, 'Menor Preço': 210.42}, {'Ação': 'FDMO34.SAO', 'Data': '2023-10-20', 'Fechamento': 58.39, 'Maior Preço': 59.41, 'Menor Preço': 58.34}, {'Ação': 'PETR4.SAO', 'Data': '2023-10-20', 'Fechamento': 37.85, 'Maior Preço': 38.86, 'Menor Preço': 37.39}]);
+  const [dbolsa, setDbolsa] = useState([{'Ação': 'ITUB3.SAO', 'Data': '2023-10-20', 'Fechamento': 23.13, 'Maior Preço': 23.26, 'Menor Preço': 22.86},{'Ação': 'ITUB3.SAO', 'Data': '2023-10-20', 'Fechamento': 23.13, 'Maior Preço': 23.26, 'Menor Preço': 22.86},{'Ação': 'ITUB3.SAO', 'Data': '2023-10-20', 'Fechamento': 23.13, 'Maior Preço': 23.26, 'Menor Preço': 22.86},{'Ação': 'ITUB3.SAO', 'Data': '2023-10-20', 'Fechamento': 23.13, 'Maior Preço': 23.26, 'Menor Preço': 22.86}, {'Ação': 'GOOG', 'Data': '2023-10-20', 'Fechamento': 136.74, 'Maior Preço': 139.04, 'Menor Preço': 136.245}, {'Ação': 'META', 'Data': '2023-10-20', 'Fechamento': 308.65, 'Maior Preço': 315.3, 'Menor Preço': 306.47}, {'Ação': 'IBM', 'Data': '2023-10-20', 'Fechamento': 137.16, 'Maior Preço': 139.27, 'Menor Preço': 137.12}, {'Ação': 'TSLA', 'Data': '2023-10-20', 'Fechamento': 211.99, 'Maior Preço': 218.8606, 'Menor Preço': 210.42}, {'Ação': 'FDMO34.SAO', 'Data': '2023-10-20', 'Fechamento': 58.39, 'Maior Preço': 59.41, 'Menor Preço': 58.34}, {'Ação': 'PETR4.SAO', 'Data': '2023-10-20', 'Fechamento': 37.85, 'Maior Preço': 38.86, 'Menor Preço': 37.39}]);
+
+  const scrollSpeed = 1;
 
   useEffect(() => {
+    fetchBolsaData();
+  }, []);
+
+  useEffect(() => {
+    setupHorizontalScroll();
+  }, []);
+  // https://apisd-production.up.railway.app/api/lista-bolsa   http://127.0.0.1:5000//api/lista-bolsa
+  const fetchBolsaData = () => {
     fetch('https://apisd-production.up.railway.app/api/lista-bolsa')
       .then((response) => {
         if (!response.ok) {
@@ -20,7 +31,44 @@ const MenuBolsa = () => {
       .catch((error) => {
         console.error("Erro durante o envio de dados", error);
       });
-  }, []);
+  };
+
+  
+  
+  const setupHorizontalScroll = () => {
+    const bolsaBox = bolsaBoxRef.current;
+  
+    if (bolsaBox) {
+      let scrollInterval;
+  
+      const startScrolling = () => {
+        scrollInterval = setInterval(() => {
+          let scrollbolsa = bolsaBox.scrollLeft
+          bolsaBox.scrollLeft += scrollSpeed;
+          
+
+          if (bolsaBox.scrollLeft == scrollbolsa ) {
+            bolsaBox.scrollLeft = 0;
+          }
+        }, 40); 
+      };
+  
+      startScrolling();
+  
+      bolsaBox.addEventListener('mouseenter', () => {
+        clearInterval(scrollInterval);
+      });
+  
+      bolsaBox.addEventListener('mouseleave', () => {
+        startScrolling();
+      });
+  
+      return () => {
+        clearInterval(scrollInterval);
+      };
+    }
+  };
+     
 
   return (
     <div id="bolsa_box" ref={bolsaBoxRef}>

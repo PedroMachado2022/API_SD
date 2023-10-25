@@ -5,7 +5,7 @@
     height: 20%;
     max-height: 120px;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     z-index: 3;
 }
@@ -32,7 +32,7 @@
     animation: transform;
 }
 
-/* Adicione um reflexo sutil com pseudo-elemento ::after */
+
 .bolsa_item::after {
     content: "";
     position: absolute;
@@ -45,10 +45,9 @@
     border-radius: 5px;
 }
 
-/* Adicione transições suaves para animações */
+
 .bolsa_item:hover {
     transform: scale(1.05);
-    /* Aumenta ligeiramente o tamanho ao passar o mouse */
     transition: transform 0.3s ease;
 }
 
@@ -116,15 +115,12 @@
 
 #bolsa_box::-webkit-scrollbar-thumb {
     background-color: #888;
-    /* Define a cor do polegar da barra de rolagem */
 }
 
 #bolsa_box::-webkit-scrollbar-thumb:hover {
     background-color: #555;
-    /* Define a cor do polegar da barra de rolagem quando hover */
 }
 
 #bolsa_box::-webkit-scrollbar-track {
     background-color: #f1f1f11b;
-    /* Define a cor da pista da barra de rolagem */
 }

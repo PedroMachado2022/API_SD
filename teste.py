@@ -1,9 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from request_BackendAPI import requestAPI
 from request_finanças import return_request
-import json
-import time
-import schedule
 from threading import Thread
 
 
