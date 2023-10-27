@@ -124,8 +124,9 @@ header .user_menu {
 }
 
 #icon img {
-    padding-top: 10px;
-    width: 4vh;
+    
+    width: 2vw;
+    min-width: 30px;
 }
 
 #city {
@@ -137,7 +138,7 @@ header .user_menu {
 
 #temp {
     margin-right: 5px;
-    margin-top: 3px;
+    margin-top: 8px;
     width: 15vh;
 }
 

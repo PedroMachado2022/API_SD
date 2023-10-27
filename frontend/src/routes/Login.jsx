@@ -5,9 +5,6 @@ import MainLogin from './ComponentsLogin/MainLogin'
 const Login = () => {
   return (
     <div>
-        
-        <p>pedro boiola</p>
-
         <MainLogin/>
     </div>
   )
