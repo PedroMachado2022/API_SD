@@ -4,52 +4,55 @@
 </div>
 
 **Descrição concisa do projeto**
-
-     Esse é um projeto de aplicativo web criado em Flask, uma estrutura de desenvolvimento em Python, que oferece uma interface para acessar informações financeiras, cotações de moedas, ações e dados meteorológicos com base no IP do usuário. Aqui está uma explicação geral do projeto.
-
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    Esse é um projeto de aplicativo web criado em Flask, uma estrutura de desenvolvimento em Python, que oferece uma interface para acessar informações financeiras, cotações de moedas, ações e dados meteorológicos com base no IP do usuário. Aqui está uma explicação geral do projeto.
+</div>
 ## Funcionalidades
 
 Neste projeto, você encontrará as seguintes funcionalidades:
 
 ### 1. Cotações Atualizadas Diariamenes
-
-     Aplicativo criar uma tread para cada atualização de informaçoes, tem 3 treads uma para atualizaçao de moedas, outra pra açoes e a ultima com intuito de montar um grafico.
-
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    Aplicativo criar uma tread para cada atualização de informaçoes, tem 3 treads uma para atualizaçao de moedas, outra pra açoes e a ultima com intuito de montar um grafico.
+</div>
 ### 2. Dados de Ações
-
-     O projeto disponibiliza informações detalhadas sobre ações de empresas, permitindo que os usuários acompanhem os valores de mercado e outras informações relacionadas.
-
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    O projeto disponibiliza informações detalhadas sobre ações de empresas, permitindo que os usuários acompanhem os valores de mercado e outras informações relacionadas.
+</div>
 
 ### 3. Gráficos Históricos
-
-      Grafico disponibiliza o historico de 15 dias da cotaçoes de Real para Dolar.
-
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    Grafico disponibiliza o historico de 15 dias da cotaçoes de Real para Dolar.
+</div>
 ### 4. Dados Meteorológicos
-
-     Com base no IP do usuário, o aplicativo obtém informações meteorológicas locais, incluindo clima, cidade e temperatura, oferecendo aos usuários uma visão rápida das condições meteorológicas atuais.
-
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    Com base no IP do usuário, o aplicativo obtém informações meteorológicas locais, incluindo clima, cidade e temperatura, oferecendo aos usuários uma visão rápida das condições meteorológicas atuais.
+</div>
 
 ## Atualização Automática de Dados
-
-     O projeto é tem como base manter os dados atualizados automaticamente. Três threads separadas cuidam da atualização de cotações, ações e gráficos em intervalos regulares.
-
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    O projeto é tem como base manter os dados atualizados automaticamente. Três threads separadas cuidam da atualização de cotações, ações e gráficos em intervalos regulares.
+</div>
 
 ## Dependências
-
-     -Python
-     -Flask
-     -React
-     -HTML CSS JS
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    -Python
+    -Flask
+    -React
+    -HTML CSS JS
+</div>
 
 
 ## Autores
 
-     Liste os autores ou colaboradores do projeto.
+<div style="background: #333; padding: 20px; margin: 10px 30px;">
+    Liste os autores ou colaboradores do projeto.
+</div>
 
 ## Exemplo de Tela em execução
 
-<div style="text-align:center;">
-    <img src="static/tela.png"  style="margin: 0 auto;">
+<div style="text-align:center;" >
+    <img src="static/tela.png" width="850" style="margin: 0 auto;">
 </div>
 
 <!--  
