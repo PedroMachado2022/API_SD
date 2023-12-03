@@ -12,38 +12,33 @@
 
 Neste projeto, você encontrará as seguintes funcionalidades:
 
-### 1. Cotações Atualizadas Diariamenes
+  A aplicacão utiliza treads para atualizar as informaçoes presentes no site.
 
-Aplicativo criar uma tread para cada atualização de informaçoes, tem 3 treads uma para atualizaçao de moedas, outra pra açoes e a ultima com intuito de montar um grafico.
-
-
+### 1. Cotações Atualizadas Diariamete
+  Os dados de referentes a cotações de algumas moedas é atualizado diariamente
+    - A primeira é utilizada para realizar solicitaçoes à uma API de cotaçoes diárias de moedas.
+      
 ### 2. Dados de Ações
- O projeto disponibiliza informações detalhadas sobre ações de empresas, permitindo que os usuários acompanhem os valores de mercado e outras informações relacionadas.
-
-
+  O projeto disponibiliza informações detalhadas sobre ações de empresas, permitindo que os usuários acompanhem os valores de mercado e outras informações relacionadas.
+    - A segunda é utilizada para realizar solicitações à uma API de finanças (estamos utilizando 10 ações na aplicação)
 
 ### 3. Gráficos Históricos
-Grafico disponibiliza o historico de 15 dias da cotaçoes de Real para Dolar.
+  Grafico disponibiliza o historico de 15 dias da cotaçoes de Real para Dolar.
+    - A terceira é utilizada, também, para solicitar à uma API de cotaçoes, mas com fechamento de 15 dias. (Utilizada para comparar o Dólar com o Real)
 
 ### 4. Dados Meteorológicos
 Com base no IP do usuário, o aplicativo obtém informações meteorológicas locais, incluindo clima, cidade e temperatura, oferecendo aos usuários uma visão rápida das condições meteorológicas atuais.
 
-
-## Atualização Automática de Dados
-O projeto é tem como base manter os dados atualizados automaticamente. Três threads separadas cuidam da atualização de cotações, ações e gráficos em intervalos regulares.
-
-
 ## Dependências
   -Python
-    -Flask
-    -React
-    -HTML CSS JS
-
-
+  -Flask
+  -React
+  -HTML CSS JS
 
 ## Autores
   Liste os autores ou colaboradores do projeto.
-
+    - Pedro Machado Araújo
+    - Luiz Gustavo Lopes
 
 ## Exemplo de Tela em execução
 
