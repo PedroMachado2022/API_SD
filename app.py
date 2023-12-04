@@ -5,9 +5,15 @@ from ip_tempo import request_tempo
 import time
 from threading import Thread
 from graphics import obter_historico
+from flask_cors import CORS
+
+
+import db_send
+import db_recive
 
 # Aplicativo Flask
 app = Flask(__name__)
+CORS(app)
 
 # Variável que guarda os dados das cotações. Ex: (Dólar/Real, Euro/Yen)
 TABELA = ''
@@ -41,6 +47,44 @@ def enviar_historico():
     #Retorna json com o historico e o nome
     return jsonify(GRAFICO)
 
+# @app.route('/registro', methods=['POST', 'GET'])
+# def recive_data():
+#     if request.method == 'POST':
+#         try:
+#             # Obtém os dados do corpo da solicitação como JSON
+#             data = request.json
+
+#             # Faça algo com os dados, como imprimir no console
+#             #print("Dados recebidos:", data)
+
+#             # Adicione a lógica de autenticação ou processamento adicional aqui
+#             db_send.send_data(data['name'], data['email'], data['password'])
+            
+#             # Retorne uma resposta de sucesso
+#             return jsonify({'message': 'Dados recebidos com sucesso'}), 200
+#         except Exception as e:
+#             # Em caso de erro, retorne uma resposta de erro
+#             return jsonify({'error': f'Erro ao processar dados: {str(e)}'}), 500
+
+@app.route('/login', methods=['POST', 'GET'])
+def confere_login():
+    if request.method == 'POST':
+        try:
+            data = request.json
+            resultado_login = db_recive.login(data['email'], data['password'])
+            print(resultado_login)
+
+            if "Liberado" in resultado_login:
+                print("Login bem-sucedido!")
+                return jsonify({'message': resultado_login}), 200
+            else:
+                print("Login falhou:", resultado_login)
+                return jsonify({'message': resultado_login}), 401
+
+        except Exception as e:
+            print(f"Erro durante o login: {e}")
+
+    return jsonify({'message': 'Falha no login'}), 401
 
 # Função que chama o Script que faz as requisições para a API das acões.
 def arq_financas():
@@ -101,7 +145,6 @@ def Atualiza_Grafico():
         print('Grafico: ok')
         # 12h de delay
         time.sleep(43200)
-     
 
 # Thread responsável por atualizar as cotações
 thread = Thread(target=atualizar_tabela)

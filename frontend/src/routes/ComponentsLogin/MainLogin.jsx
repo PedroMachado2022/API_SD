@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-
 import './MainLogin.css';
 
 const MainLogin = () => {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     password: '',
   });
+
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,13 +17,39 @@ const MainLogin = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar os dados do formulário
-    console.log('Dados do formulário:', formData);
-    // Resetar o formulário se necessário
+
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+
+        if (typeof data.message === 'string' && data.message === 'Liberado') {
+          console.log('Dados enviados com sucesso!', data.message);
+        }
+        
+        // Adicione aqui qualquer lógica adicional após o envio bem-sucedido
+
+      } else {
+        const errorData = await response.json();
+        console.error('Erro ao enviar dados:', response.statusText, errorData.message);
+        setErrorMessage(errorData.message);
+      }
+    } catch (error) {
+      console.error('Erro ao enviar dados:', error.message);
+      setErrorMessage('Erro interno ao processar a solicitação.');
+    }
+
+    // Resetar o formulário
     setFormData({
-      name: '',
       email: '',
       password: '',
     });
@@ -32,17 +58,8 @@ const MainLogin = () => {
   return (
     <div>
       <h2>Login</h2>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
         <label>
           Email:
           <input

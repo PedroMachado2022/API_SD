@@ -4,10 +4,10 @@ from hashlib import sha256
 
 # Conexão com o BD em nuvem no railway
 connect = psycopg2.connect(database = "railway",
-                            host="containers-us-west-176.railway.app",
+                            host="monorail.proxy.rlwy.net",
                             user="postgres",
-                            password= "5z9iyw8PZWBKZaY6m8hY",
-                            port="7524"
+                            password= "CA1bcaf2c16FGEdc3eBa4FcAE6D6ED1A",
+                            port="32414"
                             )
 
 def send_data(name, email, password):
@@ -28,6 +28,7 @@ def send_data(name, email, password):
         #Execução da query e envio para o DB
         cursor.execute(insert_query, values)
         connect.commit()
+        return "Registrado"
     
     # Caso ja exista o email no banco
     except IntegrityError as e:
@@ -44,4 +45,4 @@ def send_data(name, email, password):
         cursor.close()
         connect.close()
 
-#send_data("Jorge", "luizinhohashado", "password")
+#send_data("Admin", "Admin@gmail.com", "Admin")

@@ -3,11 +3,12 @@ from hashlib import sha256
 
 # Conexão com o BD em nuvem no railway
 connect = psycopg2.connect(database = "railway",
-                            host="containers-us-west-176.railway.app",
+                            host="monorail.proxy.rlwy.net",
                             user="postgres",
-                            password= "5z9iyw8PZWBKZaY6m8hY",
-                            port="7524"
+                            password= "CA1bcaf2c16FGEdc3eBa4FcAE6D6ED1A",
+                            port="32414"
                             )
+
 
 # Função que verifica se os dados do usuário existem
 def login(email, password):
@@ -29,7 +30,8 @@ def login(email, password):
             if email == row[2]:
                 # Caso o email exista, verificamos se a senhabate
                 if sha256(password.encode()).hexdigest() == row[3]:
-                    print(f"Acesso Permitido, Olá {row[1]}")
+                    #print("Liberado")
+                    return "Liberado"
                 else:
                     print("Acesso negado! Senha incorreta!")
             # Caso o email não exista

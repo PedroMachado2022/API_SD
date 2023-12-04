@@ -58,7 +58,7 @@ const Aside = () => {
                   <ul>
                     <li>
                       <div id=''></div>
-                      <a id='more'><Link to="/more">Saiba Mais</Link></a>
+                      <a id='more'><Link to="/login">Saiba Mais</Link></a>
                     </li>
                   </ul>
                 </div>
