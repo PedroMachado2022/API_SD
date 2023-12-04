@@ -5,7 +5,7 @@ from ip_tempo import request_tempo
 import time
 from threading import Thread
 from graphics import obter_historico
-from flask_cors import CORS
+#from flask_cors import CORS
 
 
 import db_send
@@ -13,7 +13,7 @@ import db_recive
 
 # Aplicativo Flask
 app = Flask(__name__)
-CORS(app)
+#CORS(app)
 
 # Variável que guarda os dados das cotações. Ex: (Dólar/Real, Euro/Yen)
 TABELA = ''
