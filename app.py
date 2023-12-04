@@ -47,24 +47,22 @@ def enviar_historico():
     #Retorna json com o historico e o nome
     return jsonify(GRAFICO)
 
-# @app.route('/registro', methods=['POST', 'GET'])
-# def recive_data():
-#     if request.method == 'POST':
-#         try:
-#             # Obtém os dados do corpo da solicitação como JSON
-#             data = request.json
+@app.route('/registro', methods=['POST', 'GET'])
+def recive_data():
+    if request.method == 'POST':
+        try:
+            # Obtém os dados do corpo da solicitação como JSON
+            data = request.json
 
-#             # Faça algo com os dados, como imprimir no console
-#             #print("Dados recebidos:", data)
+            # Chama a função send_data e captura a mensagem de retorno
+            mensagem_retorno = db_send.send_data(data['name'], data['email'], data['password'])
 
-#             # Adicione a lógica de autenticação ou processamento adicional aqui
-#             db_send.send_data(data['name'], data['email'], data['password'])
-            
-#             # Retorne uma resposta de sucesso
-#             return jsonify({'message': 'Dados recebidos com sucesso'}), 200
-#         except Exception as e:
-#             # Em caso de erro, retorne uma resposta de erro
-#             return jsonify({'error': f'Erro ao processar dados: {str(e)}'}), 500
+            if 'Registardo' in mensagem_retorno:
+                # Retorna a mensagem de retorno como parte da resposta JSON
+                return jsonify({'message': mensagem_retorno}), 200
+        except Exception as e:
+            # Em caso de erro, retorne uma resposta de erro
+            return jsonify({'error': f'Erro ao processar dados: {str(e)}'}), 500
 
 @app.route('/login', methods=['POST', 'GET'])
 def confere_login():
