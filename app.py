@@ -160,5 +160,5 @@ thread3.start()
 
 # Execução do aplicativo
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
 
