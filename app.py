@@ -47,42 +47,42 @@ def enviar_historico():
     #Retorna json com o historico e o nome
     return jsonify(GRAFICO)
 
-@app.route('/registro', methods=['POST', 'GET'])
-def recive_data():
-    if request.method == 'POST':
-        try:
-            # Obtém os dados do corpo da solicitação como JSON
-            data = request.json
+# @app.route('/registro', methods=['POST', 'GET'])
+# def recive_data():
+#     if request.method == 'POST':
+#         try:
+#             # Obtém os dados do corpo da solicitação como JSON
+#             data = request.json
 
-            # Chama a função send_data e captura a mensagem de retorno
-            mensagem_retorno = db_send.send_data(data['name'], data['email'], data['password'])
+#             # Chama a função send_data e captura a mensagem de retorno
+#             mensagem_retorno = db_send.send_data(data['name'], data['email'], data['password'])
 
-            if 'Registardo' in mensagem_retorno:
-                # Retorna a mensagem de retorno como parte da resposta JSON
-                return jsonify({'message': mensagem_retorno}), 200
-        except Exception as e:
-            # Em caso de erro, retorne uma resposta de erro
-            return jsonify({'error': f'Erro ao processar dados: {str(e)}'}), 500
+#             if 'Registardo' in mensagem_retorno:
+#                 # Retorna a mensagem de retorno como parte da resposta JSON
+#                 return jsonify({'message': mensagem_retorno}), 200
+#         except Exception as e:
+#             # Em caso de erro, retorne uma resposta de erro
+#             return jsonify({'error': f'Erro ao processar dados: {str(e)}'}), 500
 
-@app.route('/login', methods=['POST', 'GET'])
-def confere_login():
-    if request.method == 'POST':
-        try:
-            data = request.json
-            resultado_login = db_recive.login(data['email'], data['password'])
-            print(resultado_login)
+# @app.route('/login', methods=['POST', 'GET'])
+# def confere_login():
+#     if request.method == 'POST':
+#         try:
+#             data = request.json
+#             resultado_login = db_recive.login(data['email'], data['password'])
+#             print(resultado_login)
 
-            if "Liberado" in resultado_login:
-                print("Login bem-sucedido!")
-                return jsonify({'message': resultado_login}), 200
-            else:
-                print("Login falhou:", resultado_login)
-                return jsonify({'message': resultado_login}), 401
+#             if "Liberado" in resultado_login:
+#                 print("Login bem-sucedido!")
+#                 return jsonify({'message': resultado_login}), 200
+#             else:
+#                 print("Login falhou:", resultado_login)
+#                 return jsonify({'message': resultado_login}), 401
 
-        except Exception as e:
-            print(f"Erro durante o login: {e}")
+#         except Exception as e:
+#             print(f"Erro durante o login: {e}")
 
-    return jsonify({'message': 'Falha no login'}), 401
+#     return jsonify({'message': 'Falha no login'}), 401
 
 # Função que chama o Script que faz as requisições para a API das acões.
 def arq_financas():
