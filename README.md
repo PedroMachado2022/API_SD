@@ -79,4 +79,7 @@ npm install            -- caso não tenha instalado
 
 npm run dev   -rodar apenas o front
 npm run build - construir o front obs* apagar a pasta static;
+
+
+AAAA
 -->
